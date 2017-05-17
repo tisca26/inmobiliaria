@@ -91,3 +91,11 @@ defined('BOOTSTRAP_ALERT_SUCCESS')  OR define('BOOTSTRAP_ALERT_SUCCESS', 'succes
 defined('BOOTSTRAP_ALERT_INFO')     OR define('BOOTSTRAP_ALERT_INFO', 'info');
 defined('BOOTSTRAP_ALERT_WARNING')  OR define('BOOTSTRAP_ALERT_WARNING', 'warning');
 defined('BOOTSTRAP_ALERT_DANGER')   OR define('BOOTSTRAP_ALERT_DANGER', 'danger');
+
+/*
+ * Datos de la empresa
+ */
+
+defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Calzada General Mariano Escobedo 510, Anzures, Ciudad de México');
+defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(800) 123-4567');
+defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'mail@example.com');
