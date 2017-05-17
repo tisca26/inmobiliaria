@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/proyectos/inmobiliaria';
+$config['cdn_assets']='http://localhost/proyectos/inmobiliaria/assets';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -76,7 +77,10 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'spanish';
+$config['language_abbr'] = 'es';
+$config['lang_uri_abbr'] = array('es'=>'spanish','en'=>'english');
+$config['lang_ignore'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -223,7 +227,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 2;
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +328,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'Inmo#Icog-2017!';
 
 /*
 |--------------------------------------------------------------------------
