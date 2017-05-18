@@ -2,27 +2,27 @@
 <nav>
     <ul class="nav nav-pills" id="mainNav">
         <li class="dropdown-full-color dropdown-quaternary <?php echo $menu_root === '' ? 'active' : ''; ?>">
-            <a href="demo-real-estate.html">
+            <a href="<?php echo base_url_lang(); ?>">
                 <?php echo trans_line('menu_inicio'); ?>
             </a>
         </li>
         <li class="dropdown-full-color dropdown-quaternary <?php echo $menu_root === 'propiedades' ? 'active' : ''; ?>">
-            <a href="demo-real-estate-properties.html">
+            <a href="<?php echo base_url_lang_slash() . 'propiedades'; ?>">
                 <?php echo trans_line('menu_propiedades'); ?>
             </a>
         </li>
 
         <li class="dropdown dropdown-full-color dropdown-quaternary <?php echo $menu_root === 'acerca' ? 'active' : ''; ?>">
-            <a class="dropdown-toggle" href="demo-real-estate-who-we-are.html">
+            <a class="dropdown-toggle" href="<?php echo base_url_lang_slash() . 'nosotros'; ?>">
                 <?php echo trans_line('menu_acerca'); ?>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="demo-real-estate-agents.html"><?php echo trans_line('menu_agentes'); ?></a></li>
-                <li><a href="demo-real-estate-who-we-are.html"><?php echo trans_line('menu_nosotros'); ?></a></li>
+                <li><a href="<?php echo base_url_lang_slash() . 'agentes'; ?>"><?php echo trans_line('menu_agentes'); ?></a></li>
+                <li><a href="<?php echo base_url_lang_slash() . 'nosotros'; ?>"><?php echo trans_line('menu_nosotros'); ?></a></li>
             </ul>
         </li>
         <li class="dropdown-full-color dropdown-quaternary <?php echo $menu_root === 'contacto' ? 'active' : ''; ?>">
-            <a href="demo-real-estate-contact.html">
+            <a href="<?php echo base_url_lang_slash() . 'contacto'; ?>">
                 <?php echo trans_line('menu_contacto'); ?>
             </a>
         </li>

@@ -10,7 +10,7 @@
                 </p>
             </div>
             <div class="col-md-2">
-                <h4 class="mb-md"><?php echo trans_line('propiedades'); ?></h4>
+                <h4 class="mb-md"><?php echo trans_line('footer_propiedades'); ?></h4>
                 <nav class="nav-footer">
                     <ul class="custom-list-style-1 pl-lg">
                         <li>
@@ -53,10 +53,10 @@
             </div>
             <div class="col-md-5">
                 <h4 class="mb-md"><?php echo trans_line('footer_ultimos_tweets'); ?></h4>
-                <div id="tweet" class="twitter" data-plugin-tweets
-                     data-plugin-options="{'username': '<?php echo EMPRESA_TWITTER ?>', 'count': 1}">
-                    <p><?php echo trans_line('footer_espere'); ?></p>
-                </div>
+<!--                <div id="tweet" class="twitter" data-plugin-tweets-->
+<!--                     data-plugin-options="{'username': '--><?php //echo EMPRESA_TWITTER ?><!--', 'count': 1}">-->
+<!--                    <p>--><?php //echo trans_line('footer_espere'); ?><!--</p>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

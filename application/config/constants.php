@@ -100,3 +100,5 @@ defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Calzada General Ma
 defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(800) 123-4567');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'mail@example.com');
 defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'work_n_office');
+defined('GMAPS_APIKEY')  OR define('GMAPS_APIKEY', 'AIzaSyC-Y91-j5IhDX9IgKdN4sCVqRickVvoPvg');
+defined('EMPRESA_LOGO')  OR define('EMPRESA_LOGO', '/img/demos/real-estate/logo-real-estate.png');

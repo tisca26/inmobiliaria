@@ -72,19 +72,7 @@
             <div class="header-top header-top header-top-style-3 header-top-custom background-color-primary m-none">
                 <div class="container">
                     <nav class="header-nav-top pull-left">
-                        <ul class="nav nav-pills">
-                            <li class="hidden-xs">
-                                <span class="ws-nowrap"><i class="icon-location-pin icons"></i> <?php echo EMPRESA_DIRECCION; ?></span>
-                            </li>
-                            <li>
-                                <span class="ws-nowrap"><i class="icon-call-out icons"></i> <?php echo EMPRESA_TELEFONO; ?></span>
-                            </li>
-                            <li class="hidden-xs">
-                                <span class="ws-nowrap"><i class="icon-envelope-open icons"></i> <a
-                                            class="text-decoration-none"
-                                            href="<?php echo base_url_lang_slash() . 'contacto' ?>"><?php echo EMPRESA_MAIL; ?></a></span>
-                            </li>
-                        </ul>
+                        <?php echo genera_menu_datos_top(); ?>
                     </nav>
                     <nav class="header-nav-top langs pull-right mr-none">
                         <?php echo genera_menu_idioma(); ?>
@@ -95,9 +83,9 @@
                 <div class="header-row">
                     <div class="header-column">
                         <div class="header-logo">
-                            <a href="demo-real-estate.html">
+                            <a href="<?php echo base_url_lang(); ?>">
                                 <img alt="Porto" width="143" height="40"
-                                     src="<?php echo cdn_assets(); ?>/img/demos/real-estate/logo-real-estate.png">
+                                     src="<?php echo cdn_assets() . EMPRESA_LOGO; ?>">
                             </a>
                         </div>
                     </div>
@@ -865,7 +853,6 @@
 
 <!-- Theme Initialization Files -->
 <script src="<?php echo cdn_assets(); ?>/js/theme.init.js"></script>
-
 
 </body>
 </html>

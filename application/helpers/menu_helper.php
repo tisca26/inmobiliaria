@@ -42,3 +42,18 @@ if (!function_exists('genera_menu_idioma')) {
         return $result;
     }
 }
+
+if (!function_exists('genera_menu_datos_top')) {
+    function genera_menu_datos_top()
+    {
+        $result = '';
+
+        $result .= '<ul class="nav nav-pills"><li class="hidden-xs"><span class="ws-nowrap"><i class="icon-location-pin icons"></i> ' . EMPRESA_DIRECCION .'</span></li>';
+        $result .= '<li><span class="ws-nowrap"><i class="icon-call-out icons"></i> ' . EMPRESA_TELEFONO . '</span></li>';
+        $result .= '<li class="hidden-xs"><span class="ws-nowrap"><i class="icon-envelope-open icons"></i> ';
+        $result .= '<a class="text-decoration-none" href="'. base_url_lang_slash() . 'contacto'. '">' . EMPRESA_MAIL . '</a>';
+        $result .= '</span></li></ul>';
+
+        return $result;
+    }
+}
