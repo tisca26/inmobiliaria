@@ -22,3 +22,23 @@ if (!function_exists('menu_lang_sel')) {
         return $result;
     }
 }
+
+if (!function_exists('genera_menu_idioma')) {
+    function genera_menu_idioma()
+    {
+        $CI =& get_instance();
+        $abbr = $CI->config->item('language_abbr');
+        $idioma_actual = idioma_por_abbr($abbr);
+
+        $result = '';
+
+        $result .= '<ul class="nav nav-pills"><li><a href="#" class="dropdown-menu-toggle" id="dropdownLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">';
+        $result .= $idioma_actual;
+        $result .= '<i class="fa fa-sort-down"></i></a><ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">';
+        $result .= '<li><a href="' . cambia_idioma('es') . '"><img src="' . cdn_assets() . '/img/blank.gif" class="flag flag-es" alt="Español"> Español</a></li>';
+        $result .= '<li><a href="' . cambia_idioma('en') . '"><img src="' . cdn_assets() . '/img/blank.gif" class="flag flag-us" alt="English"> English</a></li>';
+        $result .= '</ul></li></ul>';
+
+        return $result;
+    }
+}

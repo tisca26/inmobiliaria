@@ -34,4 +34,18 @@ if (!function_exists('in_array_field')) {
         return false;
     }
 }
+
+if (!function_exists('idioma_por_abbr')) {
+    function idioma_por_abbr($abbr = 'es')
+    {
+        switch ($abbr){
+            case 'es':
+                return 'Español';
+            case 'en':
+                return 'English';
+            default:
+                return 'Español';
+        }
+    }
+}
 ?>

@@ -2135,7 +2135,7 @@ window.theme.fn = {
 	PluginTweets.defaults = {
 		username: null,
 		count: 2,
-		URL: 'php/twitter-feed.php'
+		URL: 'assets/php/twitter-feed.php'
 	};
 
 	PluginTweets.prototype = {

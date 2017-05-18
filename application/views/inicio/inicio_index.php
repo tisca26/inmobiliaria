@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Porto - Responsive HTML5 Template 5.7.2</title>
+    <title><?php echo trans_line('title'); ?></title>
 
-    <meta name="keywords" content="HTML5 Template"/>
-    <meta name="description" content="Porto - Responsive HTML5 Template">
-    <meta name="author" content="okler.net">
+    <meta name="keywords" content="<?php echo trans_line('meta_keywords'); ?>"/>
+    <meta name="description" content="<?php echo trans_line('meta_description'); ?>">
+    <meta name="author" content="<?php echo trans_line('meta_author'); ?>">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo cdn_assets(); ?>/img/favicon.ico" type="image/x-icon"/>
@@ -82,33 +82,12 @@
                             <li class="hidden-xs">
                                 <span class="ws-nowrap"><i class="icon-envelope-open icons"></i> <a
                                             class="text-decoration-none"
-                                            href="mailto:<?php echo EMPRESA_MAIL; ?>"><?php echo EMPRESA_MAIL; ?></a></span>
+                                            href="<?php echo base_url_lang_slash() . 'contacto' ?>"><?php echo EMPRESA_MAIL; ?></a></span>
                             </li>
                         </ul>
                     </nav>
                     <nav class="header-nav-top langs pull-right mr-none">
-                        <ul class="nav nav-pills">
-                            <li>
-                                <a href="#" class="dropdown-menu-toggle" id="dropdownLanguage" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="true">
-                                    Español
-                                    <i class="fa fa-sort-down"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
-
-                                    <li>
-                                        <a href="#espanol"><img src="<?php echo cdn_assets(); ?>/img/blank.gif"
-                                                                class="flag flag-es" alt="Español">
-                                            Español</a>
-                                    </li>
-                                    <li>
-                                        <a href="#english"><img src="<?php echo cdn_assets(); ?>/img/blank.gif"
-                                                                class="flag flag-us" alt="English">
-                                            English</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <?php echo genera_menu_idioma(); ?>
                     </nav>
                 </div>
             </div>
@@ -130,284 +109,9 @@
                                     <i class="fa fa-bars"></i>
                                 </button>
                                 <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse m-none">
-                                    <nav>
-                                        <ul class="nav nav-pills" id="mainNav">
-                                            <li class="dropdown-full-color dropdown-quaternary active">
-                                                <a href="demo-real-estate.html">
-                                                    Home
-                                                </a>
-                                            </li>
-                                            <li class="dropdown-full-color dropdown-quaternary">
-                                                <a href="demo-real-estate-properties.html">
-                                                    Properties
-                                                </a>
-                                            </li>
-
-                                            <li class="dropdown dropdown-full-color dropdown-quaternary">
-                                                <a class="dropdown-toggle" href="demo-real-estate-who-we-are.html">
-                                                    About
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="demo-real-estate-agents.html">Agents</a></li>
-                                                    <li><a href="demo-real-estate-who-we-are.html">Who We Are</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-full-color dropdown-quaternary">
-                                                <a href="demo-real-estate-contact.html">
-                                                    Contact
-                                                </a>
-                                            </li>
-                                            <li class="dropdown dropdown-full-color dropdown-quaternary dropdown-mega"
-                                                id="headerSearchProperties">
-                                                <a class="dropdown-toggle" href="#">
-                                                    Search <i class="fa fa-search"></i>
-                                                </a>
-                                                <ul class="dropdown-menu custom-fullwidth-dropdown-menu">
-                                                    <li>
-                                                        <div class="dropdown-mega-content">
-                                                            <form id="propertiesFormHeader"
-                                                                  action="demo-real-estate-properties.html"
-                                                                  method="POST">
-                                                                <div class="container p-none">
-                                                                    <div class="row">
-                                                                        <div class="col-md-2">
-                                                                            <div class="form-control-custom">
-                                                                                <select class="form-control text-uppercase font-size-sm"
-                                                                                        name="propertiesPropertyType"
-                                                                                        data-msg-required="This field is required."
-                                                                                        id="propertiesPropertyType"
-                                                                                        required="">
-                                                                                    <option value="">Property Type
-                                                                                    </option>
-                                                                                    <option value="1">Apartment</option>
-                                                                                    <option value="2">House</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <div class="form-control-custom">
-                                                                                <select class="form-control text-uppercase font-size-sm"
-                                                                                        name="propertiesLocation"
-                                                                                        data-msg-required="This field is required."
-                                                                                        id="propertiesLocation"
-                                                                                        required="">
-                                                                                    <option value="">Location</option>
-                                                                                    <option value="1">Miami</option>
-                                                                                    <option value="2">New York</option>
-                                                                                    <option value="3">Houston</option>
-                                                                                    <option value="4">Los Angeles
-                                                                                    </option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <div class="form-control-custom">
-                                                                                <select class="form-control text-uppercase font-size-sm"
-                                                                                        name="propertiesMinBeds"
-                                                                                        data-msg-required="This field is required."
-                                                                                        id="propertiesMinBeds"
-                                                                                        required="">
-                                                                                    <option value="">Min Beds</option>
-                                                                                    <option value="1">1</option>
-                                                                                    <option value="2">2</option>
-                                                                                    <option value="3">3</option>
-                                                                                    <option value="4">4</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <div class="form-control-custom">
-                                                                                <select class="form-control text-uppercase font-size-sm"
-                                                                                        name="propertiesMinPrice"
-                                                                                        data-msg-required="This field is required."
-                                                                                        id="propertiesMinPrice"
-                                                                                        required="">
-                                                                                    <option value="">Min Price</option>
-                                                                                    <option value="150000">$150,000
-                                                                                    </option>
-                                                                                    <option value="200000">$200,000
-                                                                                    </option>
-                                                                                    <option value="250000">$250,000
-                                                                                    </option>
-                                                                                    <option value="300000">$300,000
-                                                                                    </option>
-                                                                                    <option value="350000">$350,000
-                                                                                    </option>
-                                                                                    <option value="400000">$400,000
-                                                                                    </option>
-                                                                                    <option value="450000">$450,000
-                                                                                    </option>
-                                                                                    <option value="500000">$500,000
-                                                                                    </option>
-                                                                                    <option value="550000">$550,000
-                                                                                    </option>
-                                                                                    <option value="600000">$600,000
-                                                                                    </option>
-                                                                                    <option value="650000">$650,000
-                                                                                    </option>
-                                                                                    <option value="700000">$700,000
-                                                                                    </option>
-                                                                                    <option value="750000">$750,000
-                                                                                    </option>
-                                                                                    <option value="800000">$800,000
-                                                                                    </option>
-                                                                                    <option value="850000">$850,000
-                                                                                    </option>
-                                                                                    <option value="900000">$900,000
-                                                                                    </option>
-                                                                                    <option value="950000">$950,000
-                                                                                    </option>
-                                                                                    <option value="1000000">$1,000,000
-                                                                                    </option>
-                                                                                    <option value="1250000">$1,250,000
-                                                                                    </option>
-                                                                                    <option value="1500000">$1,500,000
-                                                                                    </option>
-                                                                                    <option value="1750000">$1,750,000
-                                                                                    </option>
-                                                                                    <option value="2000000">$2,000,000
-                                                                                    </option>
-                                                                                    <option value="2250000">$2,250,000
-                                                                                    </option>
-                                                                                    <option value="2500000">$2,500,000
-                                                                                    </option>
-                                                                                    <option value="2750000">$2,750,000
-                                                                                    </option>
-                                                                                    <option value="3000000">$3,000,000
-                                                                                    </option>
-                                                                                    <option value="3250000">$3,250,000
-                                                                                    </option>
-                                                                                    <option value="3500000">$3,500,000
-                                                                                    </option>
-                                                                                    <option value="3750000">$3,750,000
-                                                                                    </option>
-                                                                                    <option value="4000000">$4,000,000
-                                                                                    </option>
-                                                                                    <option value="4250000">$4,250,000
-                                                                                    </option>
-                                                                                    <option value="4500000">$4,500,000
-                                                                                    </option>
-                                                                                    <option value="4750000">$4,750,000
-                                                                                    </option>
-                                                                                    <option value="5000000">$5,000,000
-                                                                                    </option>
-                                                                                    <option value="6000000">$6,000,000
-                                                                                    </option>
-                                                                                    <option value="7000000">$7,000,000
-                                                                                    </option>
-                                                                                    <option value="8000000">$8,000,000
-                                                                                    </option>
-                                                                                    <option value="9000000">$9,000,000
-                                                                                    </option>
-                                                                                    <option value="10000000">
-                                                                                        $10,000,000
-                                                                                    </option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <div class="form-control-custom">
-                                                                                <select class="form-control text-uppercase font-size-sm"
-                                                                                        name="propertiesMaxPrice"
-                                                                                        data-msg-required="This field is required."
-                                                                                        id="propertiesMaxPrice"
-                                                                                        required="">
-                                                                                    <option value="">Max Price</option>
-                                                                                    <option value="150000">$150,000
-                                                                                    </option>
-                                                                                    <option value="200000">$200,000
-                                                                                    </option>
-                                                                                    <option value="250000">$250,000
-                                                                                    </option>
-                                                                                    <option value="300000">$300,000
-                                                                                    </option>
-                                                                                    <option value="350000">$350,000
-                                                                                    </option>
-                                                                                    <option value="400000">$400,000
-                                                                                    </option>
-                                                                                    <option value="450000">$450,000
-                                                                                    </option>
-                                                                                    <option value="500000">$500,000
-                                                                                    </option>
-                                                                                    <option value="550000">$550,000
-                                                                                    </option>
-                                                                                    <option value="600000">$600,000
-                                                                                    </option>
-                                                                                    <option value="650000">$650,000
-                                                                                    </option>
-                                                                                    <option value="700000">$700,000
-                                                                                    </option>
-                                                                                    <option value="750000">$750,000
-                                                                                    </option>
-                                                                                    <option value="800000">$800,000
-                                                                                    </option>
-                                                                                    <option value="850000">$850,000
-                                                                                    </option>
-                                                                                    <option value="900000">$900,000
-                                                                                    </option>
-                                                                                    <option value="950000">$950,000
-                                                                                    </option>
-                                                                                    <option value="1000000">$1,000,000
-                                                                                    </option>
-                                                                                    <option value="1250000">$1,250,000
-                                                                                    </option>
-                                                                                    <option value="1500000">$1,500,000
-                                                                                    </option>
-                                                                                    <option value="1750000">$1,750,000
-                                                                                    </option>
-                                                                                    <option value="2000000">$2,000,000
-                                                                                    </option>
-                                                                                    <option value="2250000">$2,250,000
-                                                                                    </option>
-                                                                                    <option value="2500000">$2,500,000
-                                                                                    </option>
-                                                                                    <option value="2750000">$2,750,000
-                                                                                    </option>
-                                                                                    <option value="3000000">$3,000,000
-                                                                                    </option>
-                                                                                    <option value="3250000">$3,250,000
-                                                                                    </option>
-                                                                                    <option value="3500000">$3,500,000
-                                                                                    </option>
-                                                                                    <option value="3750000">$3,750,000
-                                                                                    </option>
-                                                                                    <option value="4000000">$4,000,000
-                                                                                    </option>
-                                                                                    <option value="4250000">$4,250,000
-                                                                                    </option>
-                                                                                    <option value="4500000">$4,500,000
-                                                                                    </option>
-                                                                                    <option value="4750000">$4,750,000
-                                                                                    </option>
-                                                                                    <option value="5000000">$5,000,000
-                                                                                    </option>
-                                                                                    <option value="6000000">$6,000,000
-                                                                                    </option>
-                                                                                    <option value="7000000">$7,000,000
-                                                                                    </option>
-                                                                                    <option value="8000000">$8,000,000
-                                                                                    </option>
-                                                                                    <option value="9000000">$9,000,000
-                                                                                    </option>
-                                                                                    <option value="10000000">
-                                                                                        $10,000,000
-                                                                                    </option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-2">
-                                                                            <input type="submit" value="Search Now"
-                                                                                   class="btn btn-secondary btn-lg btn-block text-uppercase font-size-sm">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    <!-- Menu generado -->
+                                    <?php $this->menu_manager->generar_menu(); ?>
+                                    <!-- /Menu generado -->
                                 </div>
                             </div>
                         </div>
@@ -451,7 +155,7 @@
                                   style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
                             <span class="feature-tag" data-width="50" data-height="50"
                                   style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											FEATURED
+											<?php echo trans_line('destacado'); ?>
 										</span>
                         </div>
 
@@ -490,7 +194,7 @@
                            data-transform_in="y:[100%];s:500;"
                            data-transform_out="opacity:0;s:500;"
                            style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;">VIEW PROPERTY</a>
+                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
                     </li>
                     <li data-transition="fade">
                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/slides/slide-real-estate-2.jpg"
@@ -517,7 +221,7 @@
                                   style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
                             <span class="feature-tag" data-width="50" data-height="50"
                                   style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											FEATURED
+											<?php echo trans_line('destacado'); ?>
 										</span>
                         </div>
 
@@ -556,7 +260,7 @@
                            data-transform_in="y:[100%];s:500;"
                            data-transform_out="opacity:0;s:500;"
                            style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;">VIEW PROPERTY</a>
+                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
                     </li>
                     <li data-transition="fade">
                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/slides/slide-real-estate-3.jpg"
@@ -583,7 +287,7 @@
                                   style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
                             <span class="feature-tag" data-width="50" data-height="50"
                                   style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											FEATURED
+											<?php echo trans_line('destacado'); ?>
 										</span>
                         </div>
 
@@ -622,7 +326,7 @@
                            data-transform_in="y:[100%];s:500;"
                            data-transform_out="opacity:0;s:500;"
                            style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;">VIEW PROPERTY</a>
+                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
                     </li>
                 </ul>
             </div>
@@ -633,9 +337,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="font-weight-normal mb-xs">
-                                Listing for <strong class="text-color-secondary font-weight-extra-bold">Sale</strong>
-                                <span class="font-weight-light">or</span> <strong
-                                        class="text-color-secondary font-weight-extra-bold">Rent</strong>
+                                <?php echo trans_line('listado_para'); ?> <strong class="text-color-secondary font-weight-extra-bold"><?php echo trans_line('venta'); ?></strong>
+                                <span class="font-weight-light"><?php echo trans_line('o'); ?></span> <strong
+                                        class="text-color-secondary font-weight-extra-bold"><?php echo trans_line('renta'); ?></strong>
                             </h2>
                         </div>
                     </div>
@@ -650,7 +354,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-1.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for sale
+                                                    <?php echo trans_line('en_venta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -662,7 +366,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -670,7 +374,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -678,7 +382,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -698,7 +402,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-2.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for sale
+                                                    <?php echo trans_line('en_renta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -710,7 +414,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -718,7 +422,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -726,7 +430,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -746,7 +450,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-3.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for rent
+                                                    <?php echo trans_line('en_renta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -758,7 +462,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -766,7 +470,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -774,7 +478,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -794,7 +498,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-4.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for sale
+                                                    <?php echo trans_line('en_venta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -806,7 +510,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -814,7 +518,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -822,7 +526,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -842,7 +546,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-5.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for sale
+                                                    <?php echo trans_line('en_venta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -854,7 +558,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -862,7 +566,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -870,7 +574,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -890,7 +594,7 @@
                                                 <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-6.jpg"
                                                      class="img-responsive" alt="">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    for sale
+                                                    <?php echo trans_line('en_renta'); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
@@ -902,7 +606,7 @@
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Beds:
+                                                            <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             3
@@ -910,7 +614,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Baths:
+                                                            <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             2
@@ -918,7 +622,7 @@
                                                     </li>
                                                     <li>
                                                         <span class="accomodation-title">
-                                                            Sq Ft:
+                                                            <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
                                                             500
@@ -942,20 +646,20 @@
 
                             <button id="listingLoadMore" type="button"
                                     class="btn btn-secondary btn-xs font-size-md text-uppercase outline-none p-md pl-xlg pr-xlg m-auto mb-xlg mt-xlg">
-                                Load More...
+                                <?php echo trans_line('cargar_mas'); ?>
                             </button>
                         </div>
                     </div>
                     <hr class="dashed">
                     <div class="row pb-lg mt-xlg">
                         <div class="col-md-12">
-                            <h2 class="mt-xs mb-none">Exclusive Locations</h2>
+                            <h2 class="mt-xs mb-none"><?php echo trans_line('ubicaciones_exclusivas'); ?></h2>
                         </div>
                     </div>
                     <div class="row pb-lg mb-xlg">
                         <div class="col-sm-4 col-md-4">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-properties.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-1.jpg"
                                              class="img-responsive" alt="">
@@ -963,7 +667,7 @@
                                             <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
                                                 Palm Beach
                                             </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">11 Properties</button>
+                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">11 <?php echo trans_line('propiedades'); ?></button>
                                         </span>
                                     </span>
                                 </a>
@@ -971,7 +675,7 @@
                         </div>
                         <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-properties.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-2.jpg"
                                              class="img-responsive" alt="">
@@ -979,7 +683,7 @@
                                             <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
                                                 Fischer Island
                                             </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">2 Properties</button>
+                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">2 <?php echo trans_line('propiedades'); ?></button>
                                         </span>
                                     </span>
                                 </a>
@@ -987,7 +691,7 @@
                         </div>
                         <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-properties.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-3.jpg"
                                              class="img-responsive" alt="">
@@ -995,7 +699,7 @@
                                             <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
                                                 South Miami
                                             </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">25 Properties</button>
+                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">25 <?php echo trans_line('propiedades'); ?></button>
                                         </span>
                                     </span>
                                 </a>
@@ -1006,10 +710,10 @@
                 <div class="col-md-3">
                     <aside class="sidebar">
                         <h2 class="font-weight-normal mb-lg">
-                            Special offers
+                            <?php echo trans_line('ofertas_especiales'); ?>
                         </h2>
                         <div class="special-offer-item center text-color-light">
-                            <a href="demo-real-estate-properties.html" class="text-decoration-none">
+                            <a href="demo-real-estate-.html" class="text-decoration-none">
 										<span class="special-offer-wrapper">
 											<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/offers/special-offer-1.jpg"
                                                  class="img-responsive" alt="">
@@ -1018,15 +722,15 @@
 													Amazing Houses <br>Collection
 												</span>
 												<span class="special-offer-title font-weight-bold text-uppercase text-md pb-xlg mb-md">
-													from: $100,000
+													<?php echo trans_line('desde'); ?>: $100,000
 												</span>
-												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg">view more</button>
+												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg"><?php echo trans_line('ver_mas'); ?></button>
 											</span>
 										</span>
                             </a>
                         </div>
                         <div class="special-offer-item center text-color-light">
-                            <a href="demo-real-estate-properties.html" class="text-decoration-none">
+                            <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
 										<span class="special-offer-wrapper">
 											<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/offers/special-offer-2.jpg"
                                                  class="img-responsive" alt="">
@@ -1037,13 +741,13 @@
 												<span class="special-offer-title font-weight-bold text-uppercase text-md mb-md">
 													Miami Beach
 												</span>
-												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg">view more</button>
+												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg"><?php echo trans_line('ver_mas'); ?></button>
 											</span>
 										</span>
                             </a>
                         </div>
                         <div class="agents text-color-light center">
-                            <h4 class="text-light pt-xl m-none">Our Agents</h4>
+                            <h4 class="text-light pt-xl m-none"><?php echo trans_line('nuestros_agentes'); ?></h4>
                             <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs pt-md m-none"
                                  data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
                                 <div class="pr-sm pl-sm">
@@ -1093,26 +797,26 @@
                         <div class="newsletter box-shadow-custom p-xlg center">
                             <i class="icon-envelope-letter icons"></i>
                             <h4 class="mt-xs mb-xs">
-                                Newsletter
+                                <?php echo trans_line('boletin'); ?>
                             </h4>
                             <p>
-                                Subscribe and be the first to know about our best offers
+                                <?php echo trans_line('boletin_parrafo'); ?>
                             </p>
 
                             <div class="alert alert-success hidden" id="newsletterSuccess">
-                                <strong>Success!</strong> You've been added to our email list.
+                                <?php echo trans_line('boletin_exito'); ?>
                             </div>
 
                             <div class="alert alert-danger hidden" id="newsletterError"></div>
 
                             <form id="newsletterForm" class="text-black pt-sm" action="php/newsletter-subscribe.php"
                                   method="POST">
-                                <input class="form-control" placeholder="Your Name *" name="newsletterName"
+                                <input class="form-control" placeholder="<?php echo trans_line('boletin_nombre'); ?>" name="newsletterName"
                                        id="newsletterName" type="text">
-                                <input class="form-control" placeholder="Your Email Address *" name="newsletterEmail"
+                                <input class="form-control" placeholder="<?php echo trans_line('boletin_email'); ?>" name="newsletterEmail"
                                        id="newsletterEmail" type="text">
                                 <button class="btn btn-default text-uppercase background-color-secondary pt-sm pr-xlg pb-sm pl-xlg mt-xlg text-light"
-                                        type="submit">Subscribe
+                                        type="submit"><?php echo trans_line('suscribirse'); ?>
                                 </button>
                             </form>
                         </div>
@@ -1121,79 +825,9 @@
             </div>
         </div>
 
-        <footer id="footer" class="m-none custom-background-color-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4 class="mb-md">Porto Real Estate</h4>
-                        <p class="custom-color-2">
-                            123 Porto Blvd, Suite 100<br>
-                            New York, NY<br>
-                            Phone : 123-456-7890<br>
-                            Email : <a class="text-color-secondary" href="mailto:mail@example.com">mail@example.com</a>
-                        </p>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="mb-md">Properties</h4>
-                        <nav class="nav-footer">
-                            <ul class="custom-list-style-1 pl-lg">
-                                <li>
-                                    <a href="demo-real-estate-properties.html"
-                                       class="custom-color-2 text-decoration-none">
-                                        For Sale
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="demo-real-estate-properties.html"
-                                       class="custom-color-2 text-decoration-none">
-                                        For Rent
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-2">
-                        <h4 class="mb-md">Links</h4>
-                        <nav class="nav-footer">
-                            <ul class="custom-list-style-1 pl-lg">
-                                <li>
-                                    <a href="demo-real-estate-agents.html" class="custom-color-2 text-decoration-none">
-                                        Agents
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="demo-real-estate-who-we-are.html"
-                                       class="custom-color-2 text-decoration-none">
-                                        Who We Are
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="demo-real-estate-contact.html" class="custom-color-2 text-decoration-none">
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col-md-5">
-                        <h4 class="mb-md">Latest Tweet</h4>
-                        <div id="tweet" class="twitter" data-plugin-tweets
-                             data-plugin-options="{'username': '', 'count': 1}">
-                            <p>Please wait...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright custom-background-color-1 pb-none">
-                <div class="container">
-                    <div class="row pt-md pb-md">
-                        <div class="col-md-12 left m-none">
-                            <p>© Copyright 2017. All Rights Reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <!-- FOOTER INICIO -->
+        <?php echo $this->cargar_elementos_manager->carga_con_lang('footers/footers_web_1'); ?>
+        <!-- FOOTER FIN -->
     </div>
 </div>
 

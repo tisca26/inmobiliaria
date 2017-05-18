@@ -99,3 +99,4 @@ defined('BOOTSTRAP_ALERT_DANGER')   OR define('BOOTSTRAP_ALERT_DANGER', 'danger'
 defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Calzada General Mariano Escobedo 510, Anzures, Ciudad de México');
 defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(800) 123-4567');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'mail@example.com');
+defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'work_n_office');
