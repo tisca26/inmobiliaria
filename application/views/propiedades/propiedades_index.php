@@ -276,30 +276,31 @@
             <div class="row mb-lg">
 
                 <ul class="properties-listing sort-destination p-none">
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
+                    <?php foreach ($propiedades as $prop): ?>
+                        <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
+                            <div class="listing-item">
+                                <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop->propiedades_id; ?>" class="text-decoration-none">
                                 <span class="thumb-info thumb-info-lighten">
                                     <span class="thumb-info-wrapper m-none">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-1.jpg"
+                                        <img src="<?php echo $prop->img; ?>"
                                              class="img-responsive" alt="">
                                         <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                            <?php echo trans_line('en_venta'); ?>
+                                            <?php echo trans_line($prop->estatus_propiedad); ?>
                                         </span>
                                     </span>
                                     <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                        $ 530,000
+                                        $ <?php echo number_format($prop->precio_publico); ?>
                                         <i class="fa fa-caret-right text-color-secondary pull-right"></i>
                                     </span>
                                     <span class="custom-thumb-info-title b-normal p-lg">
-                                        <span class="thumb-info-inner text-md">South Miami</span>
+                                        <span class="thumb-info-inner text-md"><?php echo $prop->municipio; ?></span>
                                         <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                             <li>
                                                 <span class="accomodation-title">
                                                     <?php echo trans_line('cuartos'); ?>:
                                                 </span>
                                                 <span class="accomodation-value custom-color-1">
-                                                    3
+                                                    <?php echo $prop->cuartos + 0; ?>
                                                 </span>
                                             </li>
                                             <li>
@@ -307,7 +308,7 @@
                                                     <?php echo trans_line('banos'); ?>:
                                                 </span>
                                                 <span class="accomodation-value custom-color-1">
-                                                    2
+                                                    <?php echo $prop->banos + 0; ?>
                                                 </span>
                                             </li>
                                             <li>
@@ -315,272 +316,26 @@
                                                     <?php echo trans_line('m2'); ?>:
                                                 </span>
                                                 <span class="accomodation-value custom-color-1">
-                                                    500
+                                                    <?php echo $prop->metros_construidos + 0; ?>
                                                 </span>
                                             </li>
                                         </ul>
                                     </span>
                                 </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
-										<span class="thumb-info thumb-info-lighten">
-											<span class="thumb-info-wrapper m-none">
-												<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-2.jpg"
-                                                     class="img-responsive" alt="">
-												<span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-													<?php echo trans_line('en_venta'); ?>
-												</span>
-											</span>
-											<span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-												$ 320,000
-												<i class="fa fa-caret-right text-color-secondary pull-right"></i>
-											</span>
-											<span class="custom-thumb-info-title b-normal p-lg">
-												<span class="thumb-info-inner text-md">Sunny Isles Beach</span>
-												<ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('cuartos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															3
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('banos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															2
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('m2'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															500
-														</span>
-													</li>
-												</ul>
-											</span>
-										</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
-										<span class="thumb-info thumb-info-lighten">
-											<span class="thumb-info-wrapper m-none">
-												<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-3.jpg"
-                                                     class="img-responsive" alt="">
-												<span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-													<?php echo trans_line('en_renta'); ?>
-												</span>
-											</span>
-											<span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-												$ 3000 / <?php echo trans_line('mes'); ?>
-												<i class="fa fa-caret-right text-color-secondary pull-right"></i>
-											</span>
-											<span class="custom-thumb-info-title b-normal p-lg">
-												<span class="thumb-info-inner text-md">Miami</span>
-												<ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('cuartos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															3
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('banos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															2
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('m2'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															500
-														</span>
-													</li>
-												</ul>
-											</span>
-										</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
-                                <span class="thumb-info thumb-info-lighten">
-                                    <span class="thumb-info-wrapper m-none">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-4.jpg"
-                                             class="img-responsive" alt="">
-                                        <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                            <?php echo trans_line('en_venta'); ?>
-                                        </span>
-                                    </span>
-                                    <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                        $ 730,000
-                                        <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                    </span>
-                                    <span class="custom-thumb-info-title b-normal p-lg">
-                                        <span class="thumb-info-inner text-md">Lawe Worth, Florida</span>
-                                        <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('cuartos'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    3
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('banos'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    2
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('m2'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    500
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
-                                <span class="thumb-info thumb-info-lighten">
-                                    <span class="thumb-info-wrapper m-none">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-5.jpg"
-                                             class="img-responsive" alt="">
-                                        <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                            <?php echo trans_line('en_venta'); ?>
-                                        </span>
-                                    </span>
-                                    <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                        $ 435,000
-                                        <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                    </span>
-                                    <span class="custom-thumb-info-title b-normal p-lg">
-                                        <span class="thumb-info-inner text-md">Isles Beach, Florida</span>
-                                        <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('cuartos'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    3
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('banos'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    2
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span class="accomodation-title">
-                                                    <?php echo trans_line('m2'); ?>:
-                                                </span>
-                                                <span class="accomodation-value custom-color-1">
-                                                    500
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </span>
-                                </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                        <div class="listing-item">
-                            <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/'; ?>" class="text-decoration-none">
-										<span class="thumb-info thumb-info-lighten">
-											<span class="thumb-info-wrapper m-none">
-												<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-6.jpg"
-                                                     class="img-responsive" alt="">
-												<span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-													<?php echo trans_line('en_venta'); ?>
-												</span>
-											</span>
-											<span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-												$ 490,000
-												<i class="fa fa-caret-right text-color-secondary pull-right"></i>
-											</span>
-											<span class="custom-thumb-info-title b-normal p-lg">
-												<span class="thumb-info-inner text-md">Miami Ave</span>
-												<ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('cuartos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															3
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('banos'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															2
-														</span>
-													</li>
-													<li>
-														<span class="accomodation-title">
-															<?php echo trans_line('m2'); ?>:
-														</span>
-														<span class="accomodation-value custom-color-1">
-															500
-														</span>
-													</li>
-												</ul>
-											</span>
-										</span>
-                            </a>
-                        </div>
-                    </li>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
             <div class="row mt-lg mb-xlg">
                 <div class="col-md-12 center">
                     <ul class="pagination">
-                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                        <?php echo $links_paginacion; ?>
                     </ul>
                 </div>
             </div>
-
         </div>
 
         <!-- FOOTER INICIO -->

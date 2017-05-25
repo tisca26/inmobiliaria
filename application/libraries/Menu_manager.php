@@ -16,7 +16,6 @@ class Menu_manager
         $this->CI->cargar_idioma->carga_lang('menus/' . $menu);
         $menuCurrent = (strlen($URI->segment(1)) > 2) ? $URI->segment(1) : $URI->segment(2);
         $data['menu_root'] = str_replace(" ", "-", strtolower($menuCurrent));
-        log_message('DEBUG', 'el menu_root es: ' . $menuCurrent);
         $this->CI->load->view('menus/' . $menu, $data);
     }
 }

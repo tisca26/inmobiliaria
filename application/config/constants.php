@@ -95,10 +95,17 @@ defined('BOOTSTRAP_ALERT_DANGER')   OR define('BOOTSTRAP_ALERT_DANGER', 'danger'
 /*
  * Datos de la empresa
  */
-
-defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Calzada General Mariano Escobedo 510, Anzures, Ciudad de México');
+defined('EMPRESA_NOMBRE')  OR define('EMPRESA_NOMBRE', 'OKAN');
+defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Insurgentes Sur 586, Del Valle, Ciudad de México');
 defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(800) 123-4567');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'mail@example.com');
 defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'work_n_office');
 defined('GMAPS_APIKEY')  OR define('GMAPS_APIKEY', 'AIzaSyC-Y91-j5IhDX9IgKdN4sCVqRickVvoPvg');
 defined('EMPRESA_LOGO')  OR define('EMPRESA_LOGO', '/img/demos/real-estate/logo-real-estate.png');
+
+/*
+ * IMAGENES DE PROPIEDADES
+ */
+defined('PROPIEDADES_IMGS_FULL')  OR define('PROPIEDADES_IMGS_FULL', FCPATH .'assets/propiedades_imgs/');
+defined('PROPIEDADES_IMGS_SHORT')  OR define('PROPIEDADES_IMGS_SHORT', 'assets/propiedades_imgs/');
+defined('AGENTE_IMG_BASE')  OR define('AGENTE_IMG_BASE', 'assets/img/agentes/logo_base.png');

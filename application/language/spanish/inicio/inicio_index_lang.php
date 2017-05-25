@@ -25,7 +25,7 @@ $lang['propiedades'] = 'Propiedades';
 $lang['ofertas_especiales'] = 'Ofertas especiales';
 $lang['desde'] = 'desde';
 
-$lang['cargar_mas'] = 'Cargar más...';
+$lang['cargar_mas'] = 'Ver más...';
 $lang['ver_mas'] = 'Ver más';
 
 $lang['nuestros_agentes'] = 'Nuestros Agentes';

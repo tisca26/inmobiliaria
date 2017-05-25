@@ -18,9 +18,6 @@ $lang['o'] = 'o';
 $lang['en_venta'] = 'en venta';
 $lang['en_renta'] = 'en renta';
 
-$lang['cuartos'] = 'Cuartos';
-$lang['banos'] = 'Baños';
-$lang['estacionamiento'] = 'Estacionamiento';
 $lang['m2'] = 'M2';
 $lang['mes'] = 'mes';
 
@@ -32,11 +29,22 @@ $lang['buscar'] = 'Buscar';
 $lang['ver_ubicacion'] = 'Ver ubicación';
 
 $lang['precio'] = 'Precio';
+$lang['precio_avaluo'] = 'Precio avalúo';
 $lang['id_lista'] = 'ID de lista';
+$lang['tipo_propiedad'] = 'Tipo propiedad';
+$lang['Casa'] = 'Casa';
+$lang['Departamento'] = 'Departamento';
+$lang['Pent - House'] = 'Pent - House';
 $lang['direccion'] = 'Dirección';
-$lang['m2_construccion'] = 'Metros construidos';
+$lang['municipio'] = 'Municipio';
 $lang['m2_totales'] = 'Metros útiles';
-$lang['ano'] = 'Año';
+$lang['m2_construccion'] = 'Metros construidos';
+$lang['cuartos'] = 'Cuartos';
+$lang['salas'] = 'Salas';
+$lang['cocinas'] = 'Cocinas';
+$lang['banos'] = 'Baños';
+$lang['estacionamientos'] = 'Estacionamientos';
+
 
 $lang['descripcion'] = 'Descripción';
 $lang['caracteristicas'] = 'Características';

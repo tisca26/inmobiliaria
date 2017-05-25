@@ -114,7 +114,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>1234 SW 63rd Ave<span>South Miami - <a href="#map" data-hash data-hash-offset="100">(<?php echo trans_line('ver_ubicacion');?>)</a></span>
+                        <h1><?php echo $propiedad->calle . ' ' . $propiedad->no_exterior . ($propiedad->no_interior ? ' - ' . $propiedad->no_interior : ''); ?>
+                            <span><?php echo $propiedad->municipio; ?> - <a href="#map" data-hash
+                                                                            data-hash-offset="100">(<?php echo trans_line('ver_ubicacion'); ?>
+                                    )</a></span>
                         </h1>
                         <ul class="breadcrumb breadcrumb-valign-mid">
                             <li>
@@ -139,7 +142,7 @@
                         <div class="col-md-7">
 
                             <span class="thumb-info-listing-type thumb-info-listing-type-detail background-color-secondary text-uppercase text-color-light font-weight-semibold p-sm pl-md pr-md">
-                                <?php echo trans_line('en_venta'); ?>
+                                <?php echo $propiedad->estatus_propiedad; ?>
                             </span>
 
                             <div class="thumb-gallery">
@@ -147,12 +150,13 @@
                                      data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
                                     <div class="owl-carousel owl-theme manual thumb-gallery-detail show-nav-hover"
                                          id="thumbGalleryDetail">
-                                        <div>
-                                            <a href="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-1.jpg">
+                                        <?php foreach ($propiedad_imgs as $img): ?>
+                                            <div>
+                                                <a href="<?php echo $img; ?>">
 														<span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
 															<span class="thumb-info-wrapper font-size-xl">
 																<img alt="Property Detail"
-                                                                     src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-1.jpg"
+                                                                     src="<?php echo $img; ?>"
                                                                      class="img-responsive">
 																<span class="thumb-info-title font-size-xl">
 																	<span class="thumb-info-inner font-size-xl"><i
@@ -160,84 +164,26 @@
 																</span>
 															</span>
 														</span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-2.jpg">
-														<span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
-															<span class="thumb-info-wrapper font-size-xl">
-																<img alt="Property Detail"
-                                                                     src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-2.jpg"
-                                                                     class="img-responsive">
-																<span class="thumb-info-title font-size-xl">
-																	<span class="thumb-info-inner font-size-xl"><i
-                                                                                class="icon-magnifier icons font-size-xl"></i></span>
-																</span>
-															</span>
-														</span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-3.jpg">
-                                                <span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
-                                                    <span class="thumb-info-wrapper font-size-xl">
-                                                        <img alt="Property Detail"
-                                                             src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-3.jpg"
-                                                             class="img-responsive">
-                                                        <span class="thumb-info-title font-size-xl">
-                                                            <span class="thumb-info-inner font-size-xl"><i
-                                                                        class="icon-magnifier icons font-size-xl"></i></span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-4.jpg">
-														<span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
-															<span class="thumb-info-wrapper font-size-xl">
-																<img alt="Property Detail"
-                                                                     src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-4.jpg"
-                                                                     class="img-responsive">
-																<span class="thumb-info-title font-size-xl">
-																	<span class="thumb-info-inner font-size-xl"><i
-                                                                                class="icon-magnifier icons font-size-xl"></i></span>
-																</span>
-															</span>
-														</span>
-                                            </a>
-                                        </div>
+                                                </a>
+                                            </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
 
                                 <div class="owl-carousel owl-theme manual thumb-gallery-thumbs mt"
                                      id="thumbGalleryThumbs">
-                                    <div>
-                                        <img alt="Property Detail"
-                                             src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-1-thumb.jpg"
-                                             class="img-responsive cur-pointer">
-                                    </div>
-                                    <div>
-                                        <img alt="Property Detail"
-                                             src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-2-thumb.jpg"
-                                             class="img-responsive cur-pointer">
-                                    </div>
-                                    <div>
-                                        <img alt="Property Detail"
-                                             src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-3-thumb.jpg"
-                                             class="img-responsive cur-pointer">
-                                    </div>
-                                    <div>
-                                        <img alt="Property Detail"
-                                             src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-detail-4-thumb.jpg"
-                                             class="img-responsive cur-pointer">
-                                    </div>
+                                    <?php foreach ($propiedad_imgs as $img): ?>
+                                        <div>
+                                            <img alt="Property Detail"
+                                                 src="<?php echo $img; ?>"
+                                                 class="img-responsive cur-pointer">
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-md-5">
-
                             <table class="table table-striped">
                                 <colgroup>
                                     <col width="35%">
@@ -249,7 +195,15 @@
                                         <?php echo trans_line('precio'); ?>
                                     </td>
                                     <td class="font-size-xl font-weight-bold pt-sm pb-sm background-color-primary text-light">
-                                        $3,595,000
+                                        $<?php echo number_format($propiedad->precio_publico); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('precio_avaluo'); ?>
+                                    </td>
+                                    <td>
+                                        $<?php echo number_format($propiedad->precio_avaluo); ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -257,7 +211,15 @@
                                         <?php echo trans_line('id_lista'); ?>
                                     </td>
                                     <td>
-                                        #123456
+                                        #<?php echo pretty_id($propiedad->propiedades_id); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('tipo_propiedad'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo trans_line($propiedad->tipo_propiedad); ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -265,50 +227,14 @@
                                         <?php echo trans_line('direccion'); ?>
                                     </td>
                                     <td>
-                                        1234 SW 63rd Ave - South Miami - Florida<br>
-                                        <a href="#map" class="font-size-sm"data-hash data-hash-offset="100">
+                                        <?php
+                                        echo $propiedad->calle . ' ' . $propiedad->no_exterior . ($propiedad->no_interior ? ' - ' . $propiedad->no_interior : '') . ', ';
+                                        echo $propiedad->colonia . ' - ' . $propiedad->municipio . ' - ' . $propiedad->estado;
+                                        ?>
+                                        <br>
+                                        <a href="#map" class="font-size-sm" data-hash data-hash-offset="100">
                                             (<?php echo trans_line('ver_ubicacion'); ?>)
                                         </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        Neighborhood
-                                    </td>
-                                    <td>
-                                        Porto Village
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php echo trans_line('cuartos'); ?>
-                                    </td>
-                                    <td>
-                                        7
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php echo trans_line('banos'); ?>
-                                    </td>
-                                    <td>
-                                        8
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php echo trans_line('estacionamiento'); ?>
-                                    </td>
-                                    <td>
-                                        2
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php echo trans_line('m2_construccion'); ?>
-                                    </td>
-                                    <td>
-                                        8,000
                                     </td>
                                 </tr>
                                 <tr>
@@ -316,15 +242,55 @@
                                         <?php echo trans_line('m2_totales'); ?>
                                     </td>
                                     <td>
-                                        20,000
+                                        <?php echo $propiedad->metros_utiles + 0; ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <?php echo trans_line('ano'); ?>
+                                        <?php echo trans_line('m2_construccion'); ?>
                                     </td>
                                     <td>
-                                        1999
+                                        <?php echo $propiedad->metros_construidos + 0; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('cuartos'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $propiedad->cuartos + 0; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('salas'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $propiedad->salas + 0; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('cocinas'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $propiedad->cocinas + 0; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('banos'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $propiedad->banos + 0; ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php echo trans_line('estacionamientos'); ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $propiedad->cajones_estacionamiento + 0; ?>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -337,44 +303,9 @@
                         <div class="col-md-12">
 
                             <h4 class="mt-md mb-md"><?php echo trans_line('descripcion'); ?></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque
-                                eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia.
-                                Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis
-                                faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                ultrices posuere cubilia Curae;</p>
-
-                            <p>Ctrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac feugiat
-                                nibh adipiscing sit amet. In eu juiverra leo. Vestibulum ante ipsum primis in faucibus
-                                orci.</p>
-
-                            <hr class="solid tall">
-
-                            <h4 class="mt-md mb-md"><?php echo trans_line('caracteristicas'); ?></h4>
-
-                            <ul class="list list-icons list-secondary row m-none">
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Air conditioning <a href="#"
-                                                                                                              data-plugin-tooltip
-                                                                                                              data-toggle="tooltip"
-                                                                                                              data-placement="top"
-                                                                                                              title="+ Central Heating"><i
-                                                class="fa fa-info-circle"></i></a></li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Home Theater</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Central Heating</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Laundry</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Balcony</li>
-                                <li class="col-sm-6 col-md-4 custom-list-item-disabled"><i class="fa fa-check"></i>
-                                    Storage
-                                </li>
-                                <li class="col-sm-6 col-md-4 custom-list-item-disabled"><i class="fa fa-check"></i>
-                                    Garage
-                                </li>
-                                <li class="col-sm-6 col-md-4 custom-list-item-disabled"><i class="fa fa-check"></i> Yard
-                                </li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Electric Water Heater</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Deck</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Gym</li>
-                                <li class="col-sm-6 col-md-4"><i class="fa fa-check"></i> Ocean View</li>
-                            </ul>
+                            <p>
+                                <?php echo $propiedad->{'descripcion_' . lang_segment()}; ?>
+                            </p>
 
                             <hr class="solid tall">
 
@@ -498,7 +429,6 @@
             </div>
 
         </div>
-
         <!-- FOOTER INICIO -->
         <?php echo $this->cargar_elementos_manager->carga_con_lang('footers/footers_web_1'); ?>
         <!-- FOOTER FIN -->
@@ -540,7 +470,6 @@
 <!-- Theme Initialization Files -->
 <script src="<?php echo cdn_assets(); ?>/js/theme.init.js"></script>
 
-
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GMAPS_APIKEY; ?>"></script>
 <script>
 
@@ -555,10 +484,11 @@
 
     // Map Markers
     var mapMarkers = [{
-        address: "New York, NY 10017",
-        html: "<strong>Porto Real Estate</strong>",
+        latitude: <?php echo $propiedad->latitud; ?>,
+        longitude: <?php echo $propiedad->longitud; ?>,
+        html: "<strong><?php echo EMPRESA_NOMBRE  . ' | ' . $propiedad->calle . ' ' . $propiedad->no_exterior; ?></strong>",
         icon: {
-            image: "<?php echo cdn_assets(); ?>/img/demos/real-estate/pin.png",
+            image: "<?php echo base_url(); ?>/assets/img/demos/real-estate/pin.png",
             iconsize: [36, 36],
             iconanchor: [36, 36]
         },
@@ -566,8 +496,8 @@
     }];
 
     // Map Initial Location
-    var initLatitude = 40.75198;
-    var initLongitude = -73.96978;
+    var initLatitude = <?php echo $propiedad->latitud; ?>;
+    var initLongitude = <?php echo $propiedad->longitud; ?>;
 
     // Map Extended Settings
     var mapSettings = {
@@ -591,7 +521,7 @@
         mapRef = $('#googlemaps').data('gMap.reference');
 
     // Map Center At
-    var mapCenterAt = function (options, e) {
+    var mapCenterAt = function(options, e) {
         e.preventDefault();
         $('#googlemaps').gMap("centerAt", options);
     }
@@ -620,57 +550,7 @@
     }];
 
     // Styles from https://snazzymaps.com/
-    var styles = [{
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [{"color": "#e9e9e9"}, {"lightness": 17}]
-    }, {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [{"color": "#f5f5f5"}, {"lightness": 20}]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#ffffff"}, {"lightness": 17}]
-    }, {
-        "featureType": "road.highway",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#ffffff"}, {"lightness": 29}, {"weight": 0.2}]
-    }, {
-        "featureType": "road.arterial",
-        "elementType": "geometry",
-        "stylers": [{"color": "#ffffff"}, {"lightness": 18}]
-    }, {
-        "featureType": "road.local",
-        "elementType": "geometry",
-        "stylers": [{"color": "#ffffff"}, {"lightness": 16}]
-    }, {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [{"color": "#f5f5f5"}, {"lightness": 21}]
-    }, {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [{"color": "#dedede"}, {"lightness": 21}]
-    }, {
-        "elementType": "labels.text.stroke",
-        "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
-    }, {
-        "elementType": "labels.text.fill",
-        "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]
-    }, {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {
-        "featureType": "transit",
-        "elementType": "geometry",
-        "stylers": [{"color": "#f2f2f2"}, {"lightness": 19}]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.fill",
-        "stylers": [{"color": "#fefefe"}, {"lightness": 20}]
-    }, {
-        "featureType": "administrative",
-        "elementType": "geometry.stroke",
-        "stylers": [{"color": "#fefefe"}, {"lightness": 17}, {"weight": 1.2}]
-    }];
+    var styles = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}];
 
     var styledMap = new google.maps.StyledMapType(styles, {
         name: 'Styled Map'

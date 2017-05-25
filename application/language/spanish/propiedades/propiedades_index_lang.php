@@ -14,6 +14,9 @@ $lang['venta'] = 'Venta';
 $lang['renta'] = 'Renta';
 $lang['o'] = 'o';
 
+$lang['primero'] = 'Primero';
+$lang['ultimo'] = 'Último';
+
 $lang['en_venta'] = 'en venta';
 $lang['en_renta'] = 'en renta';
 

@@ -48,4 +48,11 @@ if (!function_exists('idioma_por_abbr')) {
         }
     }
 }
+
+if (!function_exists('pretty_id')) {
+    function pretty_id($id = '0')
+    {
+        return str_pad($id, 6, "0", STR_PAD_LEFT);
+    }
+}
 ?>

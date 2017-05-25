@@ -115,207 +115,77 @@
                  data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 650, 'disableProgressBar': 'on', 'navigation': {'arrows': {'enable': true, 'left':{'container':'slider','h_align':'right','v_align':'center','h_offset':20,'v_offset':-80},'right':{'container':'slider','h_align':'right','v_align':'center','h_offset':20,'v_offset':80}}}}">
                 <div class="slides-number hidden-xs">
                     <span class="atual">1</span>
-                    <span class="total">3</span>
+                    <span class="total"><?php echo $cuantas_destacadas; ?></span>
                 </div>
                 <ul>
-                    <li data-transition="fade">
-                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/slides/slide-real-estate-1.jpg"
-                             alt=""
-                             data-bgposition="center center"
-                             data-bgfit="cover"
-                             data-bgrepeat="no-repeat"
-                             class="rev-slidebg">
+                    <?php foreach ($propiedades_destacadas as $prop): ?>
+                        <li data-transition="fade">
+                            <img src="<?php echo $prop->img; ?>"
+                                 alt="OKAN Real State"
+                                 data-bgposition="center center"
+                                 data-bgfit="cover"
+                                 data-bgrepeat="no-repeat"
+                                 class="rev-slidebg">
 
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme skrollable skrollable-after"
-                             id="slide-529-layer-1"
-                             data-x="left" data-hoffset="15"
-                             data-y="center" data-voffset="0"
-                             data-width="360"
-                             data-height="360"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-start="500"
-                             data-responsive_offset="on"
-                             style="background-color: rgb(255, 255, 255); padding: 30px; overflow: hidden;">
-                            <span class="featured-border"
-                                  style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
-                            <span class="feature-tag" data-width="50" data-height="50"
-                                  style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											<?php echo trans_line('destacado'); ?>
-										</span>
-                        </div>
+                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme skrollable skrollable-after"
+                                 id="slide-529-layer-1"
+                                 data-x="left" data-hoffset="15"
+                                 data-y="center" data-voffset="0"
+                                 data-width="360"
+                                 data-height="360"
+                                 data-whitespace="nowrap"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
+                                 data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
+                                 data-start="500"
+                                 data-responsive_offset="on"
+                                 style="background-color: rgb(255, 255, 255); padding: 30px; overflow: hidden;">
+                                <span class="featured-border"
+                                      style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
+                                <span class="feature-tag" data-width="50" data-height="50"
+                                      style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
+                                    <?php echo trans_line('destacado'); ?>
+                                </span>
+                            </div>
 
-                        <div class="tp-caption main-label"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="-50"
-                             data-start="1500"
-                             data-whitespace="nowrap"
-                             data-transform_in="y:[-100%];s:500;"
-                             data-transform_out="opacity:0;s:500;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 1.9em; color: #000; text-transform: uppercase; font-weight: 900; text-shadow: none; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">PORTO DRIVE
-                        </div>
+                            <div class="tp-caption main-label"
+                                 data-x="left" data-hoffset="35"
+                                 data-y="center" data-voffset="-50"
+                                 data-start="1500"
+                                 data-whitespace="nowrap"
+                                 data-transform_in="y:[-100%];s:500;"
+                                 data-transform_out="opacity:0;s:500;"
+                                 data-textAlign="center"
+                                 style="z-index: 5; font-size: 1.9em; color: #000; text-transform: uppercase; font-weight: 900; text-shadow: none; width: 27vw; max-width: 320px;"
+                                 data-mask_in="x:0px;y:0px;"><?php echo $prop->calle . ' - ' . $prop->no_exterior; ?>
+                            </div>
 
-                        <div class="tp-caption"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="0"
-                             data-start="1500"
-                             data-height="44"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 3em; font-weight: 400; text-transform: uppercase; color: #219cd2; line-height: 0.8em; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">$975,000
-                        </div>
+                            <div class="tp-caption"
+                                 data-x="left" data-hoffset="35"
+                                 data-y="center" data-voffset="0"
+                                 data-start="1500"
+                                 data-height="44"
+                                 data-whitespace="nowrap"
+                                 data-transform_idle="o:1;"
+                                 data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
+                                 data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
+                                 data-textAlign="center"
+                                 style="z-index: 5; font-size: 3em; font-weight: 400; text-transform: uppercase; color: #219cd2; line-height: 0.8em; width: 27vw; max-width: 320px;"
+                                 data-mask_in="x:0px;y:0px;">$<?php echo number_format($prop->precio_publico); ?>
+                            </div>
 
-                        <a class="tp-caption slide-button"
-                           href="demo-real-estate-properties-detail.html"
-                           data-x="left" data-hoffset="108"
-                           data-y="center" data-voffset="60"
-                           data-start="1500"
-                           data-whitespace="nowrap"
-                           data-transform_in="y:[100%];s:500;"
-                           data-transform_out="opacity:0;s:500;"
-                           style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
-                    </li>
-                    <li data-transition="fade">
-                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/slides/slide-real-estate-2.jpg"
-                             alt=""
-                             data-bgposition="center center"
-                             data-bgfit="cover"
-                             data-bgrepeat="no-repeat"
-                             class="rev-slidebg">
-
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme skrollable skrollable-after"
-                             id="slide-529-layer-1"
-                             data-x="left" data-hoffset="15"
-                             data-y="center" data-voffset="0"
-                             data-width="360"
-                             data-height="360"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-start="500"
-                             data-responsive_offset="on"
-                             style="background-color: rgb(255, 255, 255); padding: 30px; overflow: hidden;">
-                            <span class="featured-border"
-                                  style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
-                            <span class="feature-tag" data-width="50" data-height="50"
-                                  style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											<?php echo trans_line('destacado'); ?>
-										</span>
-                        </div>
-
-                        <div class="tp-caption main-label"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="-50"
-                             data-start="1500"
-                             data-whitespace="nowrap"
-                             data-transform_in="y:[-100%];s:500;"
-                             data-transform_out="opacity:0;s:500;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 1.9em; color: #000; text-transform: uppercase; font-weight: 900; text-shadow: none; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">SOUTH MIAMI
-                        </div>
-
-                        <div class="tp-caption"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="0"
-                             data-start="1500"
-                             data-height="44"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 3em; font-weight: 400; text-transform: uppercase; color: #219cd2; line-height: 0.8em; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">$790,000
-                        </div>
-
-                        <a class="tp-caption slide-button"
-                           href="demo-real-estate-properties-detail.html"
-                           data-x="left" data-hoffset="108"
-                           data-y="center" data-voffset="60"
-                           data-start="1500"
-                           data-whitespace="nowrap"
-                           data-transform_in="y:[100%];s:500;"
-                           data-transform_out="opacity:0;s:500;"
-                           style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
-                    </li>
-                    <li data-transition="fade">
-                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/slides/slide-real-estate-3.jpg"
-                             alt=""
-                             data-bgposition="center center"
-                             data-bgfit="cover"
-                             data-bgrepeat="no-repeat"
-                             class="rev-slidebg">
-
-                        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme skrollable skrollable-after"
-                             id="slide-529-layer-1"
-                             data-x="left" data-hoffset="15"
-                             data-y="center" data-voffset="0"
-                             data-width="360"
-                             data-height="360"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-start="500"
-                             data-responsive_offset="on"
-                             style="background-color: rgb(255, 255, 255); padding: 30px; overflow: hidden;">
-                            <span class="featured-border"
-                                  style="border: 2px solid #dcdde0; width: 90%; position: absolute; height: 90%; top: 5%; left: 5%;"></span>
-                            <span class="feature-tag" data-width="50" data-height="50"
-                                  style="background: #2bca6e; color: #FFF; text-transform: uppercase; padding: 15px 102px; position: absolute; right: -24%; top: 6%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg);">
-											<?php echo trans_line('destacado'); ?>
-										</span>
-                        </div>
-
-                        <div class="tp-caption main-label"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="-50"
-                             data-start="1500"
-                             data-whitespace="nowrap"
-                             data-transform_in="y:[-100%];s:500;"
-                             data-transform_out="opacity:0;s:500;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 1.9em; color: #000; text-transform: uppercase; font-weight: 900; text-shadow: none; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">MIAMI AVE
-                        </div>
-
-                        <div class="tp-caption"
-                             data-x="left" data-hoffset="35"
-                             data-y="center" data-voffset="0"
-                             data-start="1500"
-                             data-height="44"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;"
-                             data-transform_out="x:left;s:1200;e:Power3.easeInOut;"
-                             data-textAlign="center"
-                             style="z-index: 5; font-size: 3em; font-weight: 400; text-transform: uppercase; color: #219cd2; line-height: 0.8em; width: 27vw; max-width: 320px;"
-                             data-mask_in="x:0px;y:0px;">$625,000
-                        </div>
-
-                        <a class="tp-caption slide-button"
-                           href="demo-real-estate-properties-detail.html"
-                           data-x="left" data-hoffset="108"
-                           data-y="center" data-voffset="60"
-                           data-start="1500"
-                           data-whitespace="nowrap"
-                           data-transform_in="y:[100%];s:500;"
-                           data-transform_out="opacity:0;s:500;"
-                           style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
-                           data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
-                    </li>
+                            <a class="tp-caption slide-button"
+                               href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop->propiedades_id; ?>"
+                               data-x="left" data-hoffset="108"
+                               data-y="center" data-voffset="60"
+                               data-start="1500"
+                               data-whitespace="nowrap"
+                               data-transform_in="y:[100%];s:500;"
+                               data-transform_out="opacity:0;s:500;"
+                               style="z-index: 5; font-size: 1em; text-transform: uppercase; background: #219cd2; padding: 12px 35px; color: #FFF;"
+                               data-mask_in="x:0px;y:0px;"><?php echo trans_line('ver_propiedad'); ?></a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
@@ -325,7 +195,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="font-weight-normal mb-xs">
-                                <?php echo trans_line('listado_para'); ?> <strong class="text-color-secondary font-weight-extra-bold"><?php echo trans_line('venta'); ?></strong>
+                                <?php echo trans_line('listado_para'); ?> <strong
+                                        class="text-color-secondary font-weight-extra-bold"><?php echo trans_line('venta'); ?></strong>
                                 <span class="font-weight-light"><?php echo trans_line('o'); ?></span> <strong
                                         class="text-color-secondary font-weight-extra-bold"><?php echo trans_line('renta'); ?></strong>
                             </h2>
@@ -334,30 +205,32 @@
                     <div class="row">
                         <ul id="listingLoadMoreWrapper" class="properties-listing sort-destination p-none"
                             data-total-pages="2">
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
+                            <?php foreach ($propiedades_pagina_inicio as $prop_inicio): ?>
+                                <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
+                                    <div class="listing-item">
+                                        <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop_inicio->propiedades_id ?>"
+                                           class="text-decoration-none">
                                         <span class="thumb-info thumb-info-lighten">
                                             <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-1.jpg"
-                                                     class="img-responsive" alt="">
+                                                <img src="<?php echo $prop_inicio->img; ?>"
+                                                     class="img-responsive" alt="OKAN Real State">
                                                 <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_venta'); ?>
+                                                    <?php echo trans_line($prop_inicio->estatus_propiedad); ?>
                                                 </span>
                                             </span>
                                             <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 530,000
+                                                $ <?php echo number_format($prop_inicio->precio_publico); ?>
                                                 <i class="fa fa-caret-right text-color-secondary pull-right"></i>
                                             </span>
                                             <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">South Miami</span>
+                                                <span class="thumb-info-inner text-md"><?php echo $prop_inicio->municipio; ?></span>
                                                 <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
                                                     <li>
                                                         <span class="accomodation-title">
                                                             <?php echo trans_line('cuartos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
-                                                            3
+                                                            <?php echo $prop_inicio->cuartos + 0; ?>
                                                         </span>
                                                     </li>
                                                     <li>
@@ -365,7 +238,7 @@
                                                             <?php echo trans_line('banos'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
-                                                            2
+                                                            <?php echo $prop_inicio->banos + 0; ?>
                                                         </span>
                                                     </li>
                                                     <li>
@@ -373,257 +246,18 @@
                                                             <?php echo trans_line('m2'); ?>:
                                                         </span>
                                                         <span class="accomodation-value custom-color-1">
-                                                            500
+                                                            <?php echo $prop_inicio->metros_utiles + 0; ?>
                                                         </span>
                                                     </li>
                                                 </ul>
                                             </span>
                                         </span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
-                                        <span class="thumb-info thumb-info-lighten">
-                                            <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-2.jpg"
-                                                     class="img-responsive" alt="">
-                                                <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_renta'); ?>
-                                                </span>
-                                            </span>
-                                            <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 320,000
-                                                <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                            </span>
-                                            <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">Sunny Isles Beach</span>
-                                                <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('cuartos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            3
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('banos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            2
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('m2'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            500
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
-                                        <span class="thumb-info thumb-info-lighten">
-                                            <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-3.jpg"
-                                                     class="img-responsive" alt="">
-                                                <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_renta'); ?>
-                                                </span>
-                                            </span>
-                                            <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 3000 / month
-                                                <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                            </span>
-                                            <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">Miami</span>
-                                                <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('cuartos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            3
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('banos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            2
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('m2'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            500
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
-                                        <span class="thumb-info thumb-info-lighten">
-                                            <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-4.jpg"
-                                                     class="img-responsive" alt="">
-                                                <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_venta'); ?>
-                                                </span>
-                                            </span>
-                                            <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 730,000
-                                                <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                            </span>
-                                            <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">Lawe Worth, Florida</span>
-                                                <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('cuartos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            3
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('banos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            2
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('m2'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            500
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
-                                        <span class="thumb-info thumb-info-lighten">
-                                            <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-5.jpg"
-                                                     class="img-responsive" alt="">
-                                                <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_venta'); ?>
-                                                </span>
-                                            </span>
-                                            <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 435,000
-                                                <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                            </span>
-                                            <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">Isles Beach, Florida</span>
-                                                <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('cuartos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            3
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('banos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            2
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('m2'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            500
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
-                                <div class="listing-item">
-                                    <a href="demo-real-estate-properties-detail.html" class="text-decoration-none">
-                                        <span class="thumb-info thumb-info-lighten">
-                                            <span class="thumb-info-wrapper m-none">
-                                                <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-6.jpg"
-                                                     class="img-responsive" alt="">
-                                                <span class="thumb-info-listing-type background-color-secondary text-uppercase text-color-light font-weight-semibold p-xs pl-md pr-md">
-                                                    <?php echo trans_line('en_renta'); ?>
-                                                </span>
-                                            </span>
-                                            <span class="thumb-info-price background-color-primary text-color-light text-lg p-sm pl-md pr-md">
-                                                $ 490,000
-                                                <i class="fa fa-caret-right text-color-secondary pull-right"></i>
-                                            </span>
-                                            <span class="custom-thumb-info-title b-normal p-lg">
-                                                <span class="thumb-info-inner text-md">Miami Ave</span>
-                                                <ul class="accommodations text-uppercase font-weight-bold p-none text-sm">
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('cuartos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            3
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('banos'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            2
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="accomodation-title">
-                                                            <?php echo trans_line('m2'); ?>:
-                                                        </span>
-                                                        <span class="accomodation-value custom-color-1">
-                                                            500
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </span>
-                                        </span>
-                                    </a>
-                                </div>
-                            </li>
+                                        </a>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
-                        <div class="col-md-12">
+                        <div class="col-md-12 text-center">
                             <div id="listingLoadMoreLoader" class="listing-load-more-loader">
                                 <div class="bounce-loader">
                                     <div class="bounce1"></div>
@@ -632,10 +266,10 @@
                                 </div>
                             </div>
 
-                            <button id="listingLoadMore" type="button"
-                                    class="btn btn-secondary btn-xs font-size-md text-uppercase outline-none p-md pl-xlg pr-xlg m-auto mb-xlg mt-xlg">
+                            <a href="<?php echo base_url_lang_slash() . 'propiedades' ?>" id="" type="button"
+                               class="btn btn-secondary btn-xs font-size-md text-uppercase outline-none p-md pl-xlg pr-xlg m-auto mb-xlg mt-xlg">
                                 <?php echo trans_line('cargar_mas'); ?>
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <hr class="dashed">
@@ -647,7 +281,8 @@
                     <div class="row pb-lg mb-xlg">
                         <div class="col-sm-4 col-md-4">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
+                                   class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-1.jpg"
                                              class="img-responsive" alt="">
@@ -663,7 +298,8 @@
                         </div>
                         <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
+                                   class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-2.jpg"
                                              class="img-responsive" alt="">
@@ -679,7 +315,8 @@
                         </div>
                         <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
                             <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
+                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
+                                   class="text-decoration-none">
                                     <span class="special-offer-wrapper">
                                         <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-3.jpg"
                                              class="img-responsive" alt="">
@@ -700,84 +337,60 @@
                         <h2 class="font-weight-normal mb-lg">
                             <?php echo trans_line('ofertas_especiales'); ?>
                         </h2>
-                        <div class="special-offer-item center text-color-light">
-                            <a href="demo-real-estate-.html" class="text-decoration-none">
-										<span class="special-offer-wrapper">
-											<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/offers/special-offer-1.jpg"
-                                                 class="img-responsive" alt="">
-											<span class="special-offer-infos text-color-light">
-												<span class="special-offer-description font-weight-light text-lg">
-													Amazing Houses <br>Collection
-												</span>
-												<span class="special-offer-title font-weight-bold text-uppercase text-md pb-xlg mb-md">
-													<?php echo trans_line('desde'); ?>: $100,000
-												</span>
-												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg"><?php echo trans_line('ver_mas'); ?></button>
-											</span>
-										</span>
-                            </a>
-                        </div>
-                        <div class="special-offer-item center text-color-light">
-                            <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html" class="text-decoration-none">
-										<span class="special-offer-wrapper">
-											<img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/offers/special-offer-2.jpg"
-                                                 class="img-responsive" alt="">
-											<span class="special-offer-infos text-color-light pt-lg">
-												<span class="special-offer-description font-weight-light text-lg">
-													Exclusive Comdominium
-												</span>
-												<span class="special-offer-title font-weight-bold text-uppercase text-md mb-md">
-													Miami Beach
-												</span>
-												<button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg"><?php echo trans_line('ver_mas'); ?></button>
-											</span>
-										</span>
-                            </a>
-                        </div>
+                        <?php foreach ($propiedades_oferta_especial as $prop_especial): ?>
+                            <div class="special-offer-item center text-color-light">
+                                <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop_especial->propiedades_id; ?>"
+                                   class="text-decoration-none">
+                                    <span class="special-offer-wrapper">
+                                        <img src="<?php echo $prop_especial->img; ?>"
+                                             class="img-responsive" alt="">
+                                        <span class="special-offer-infos text-color-light">
+                                            <span class="special-offer-description font-weight-light text-lg">
+                                                <?php echo $prop_especial->calle . ' - ' . $prop_especial->no_exterior; ?>
+                                                <br>
+                                                <?php echo $prop_especial->municipio; ?>
+                                            </span>
+                                            <span class="special-offer-title font-weight-bold text-uppercase text-md pb-xlg mb-md">
+                                                <?php echo trans_line('desde'); ?>
+                                                : $<?php echo number_format($prop_especial->precio_publico); ?>
+                                            </span>
+                                            <button class="btn btn-secondary text-uppercase p-sm pl-xlg pr-xlg"><?php echo trans_line('ver_mas'); ?></button>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+
                         <div class="agents text-color-light center">
                             <h4 class="text-light pt-xl m-none"><?php echo trans_line('nuestros_agentes'); ?></h4>
                             <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs pt-md m-none"
                                  data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
+                                <?php foreach ($agentes as $agente): ?>
+                                    <div class="pr-sm pl-sm">
+                                        <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
+                                            <span class="agent-thumb">
+                                                <img class="img-responsive img-circle" src="<?php echo $agente->img_profile; ?>" alt="<?php EMPRESA_NOMBRE; ?>"/>
+                                            </span>
+                                            <span class="agent-infos text-light pt-md">
+                                                <strong class="text-uppercase font-weight-bold"><?php echo $agente->nombre . ' ' . $agente->apellido_paterno; ?></strong>
+                                                <span class="font-weight-light"><?php echo $agente->tel_movil; ?></span>
+                                                <span class="font-weight-light"><?php echo $agente->email; ?></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                                 <div class="pr-sm pl-sm">
                                     <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-11.jpg"
-                                                         alt/>
-												</span>
+                                        <span class="agent-thumb">
+                                            <img class="img-responsive img-circle"
+                                                 src="<?php echo base_url_slash() . AGENTE_IMG_BASE; ?>"
+                                                 alt="<?php echo EMPRESA_NOMBRE; ?>"/>
+                                        </span>
                                         <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Bruno Doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">bruno@domain.com</span>
-												</span>
-                                    </a>
-                                </div>
-                                <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-12.jpg"
-                                                         alt/>
-												</span>
-                                        <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Jeff doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">jeffdoe@domain.com</span>
-												</span>
-                                    </a>
-                                </div>
-                                <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-13.jpg"
-                                                         alt/>
-												</span>
-                                        <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Jessica Doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">jessicadoe@domain.com</span>
-												</span>
+                                            <strong class="text-uppercase font-weight-bold"><?php echo EMPRESA_NOMBRE; ?></strong>
+                                            <span class="font-weight-light"><?php echo EMPRESA_TELEFONO; ?></span>
+                                            <span class="font-weight-light"><?php echo EMPRESA_MAIL; ?></span>
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -799,9 +412,11 @@
 
                             <form id="newsletterForm" class="text-black pt-sm" action="php/newsletter-subscribe.php"
                                   method="POST">
-                                <input class="form-control" placeholder="<?php echo trans_line('boletin_nombre'); ?>" name="newsletterName"
+                                <input class="form-control" placeholder="<?php echo trans_line('boletin_nombre'); ?>"
+                                       name="newsletterName"
                                        id="newsletterName" type="text">
-                                <input class="form-control" placeholder="<?php echo trans_line('boletin_email'); ?>" name="newsletterEmail"
+                                <input class="form-control" placeholder="<?php echo trans_line('boletin_email'); ?>"
+                                       name="newsletterEmail"
                                        id="newsletterEmail" type="text">
                                 <button class="btn btn-default text-uppercase background-color-secondary pt-sm pr-xlg pb-sm pl-xlg mt-xlg text-light"
                                         type="submit"><?php echo trans_line('suscribirse'); ?>
