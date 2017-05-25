@@ -99,4 +99,24 @@ class Propiedad
         return $propiedades;
     }
 
+    public function propiedades_filtros($limit = 10, $offset = 0, $busqueda_dto = null)
+    {
+        if (is_null($busqueda_dto)){
+            return $this->propiedades_todas($limit, $offset);
+        }
+
+        if (!is_object($busqueda_dto)){
+            return $this->propiedades_todas($limit, $offset);
+        }
+
+        $tipo_propiedad = isset($busqueda_dto->tipo_propiedad) ? $busqueda_dto->tipo_propiedad : '';
+        $ubicacion = isset($busqueda_dto->ubicacion) ? $busqueda_dto->ubicacion : '';
+        $cuartos = isset($busqueda_dto->cuartos) ? $busqueda_dto->cuartos : '';
+        $precio_min = isset($busqueda_dto->min_precio) ? $busqueda_dto->min_precio : '';
+        $precio_max = isset($busqueda_dto->max_precio) ? $busqueda_dto->max_precio : '';
+        $propiedades = $this->CI->propiedades_model->propiedades_filtros($limit, $offset, $tipo_propiedad, $ubicacion, $cuartos, $precio_min, $precio_max);
+        $propiedades = $this->asigna_img_a_propiedades($propiedades);
+        return $propiedades;
+    }
+
 }

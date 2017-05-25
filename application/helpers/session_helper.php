@@ -29,3 +29,11 @@ if (!function_exists('set_attr_session')) {
         }
     }
 }
+
+if (!function_exists('del_attr_session')) {
+    function del_attr_session($var = '')
+    {
+        $CI =& get_instance();
+        $CI->session->unset_userdata($var);
+    }
+}

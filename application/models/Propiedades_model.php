@@ -104,9 +104,67 @@ class Propiedades_model extends CI_Model
     {
         $res = array();
         $q = $this->db->limit($limit, $offset)->order_by('propiedades_id DESC')->get('v_propiedades_completo');
-        if ($q->num_rows() > 0){
+        if ($q->num_rows() > 0) {
             $res = $q->result();
         }
         return $res;
     }
+
+    public function ubicaciones_distintas()
+    {
+        $res = array();
+        $q = $this->db->group_by('estado')->order_by('estado ASC')->get('propiedades');
+        if ($q->num_rows() > 0) {
+            $res = $q->result();
+        }
+        return $res;
+    }
+
+    public function max_cuartos()
+    {
+        $res = null;
+        $this->db->select_max('cuartos');
+        $q = $this->db->get('propiedades');
+        if ($q->num_rows() > 0) {
+            $res = $q->row();
+        }
+        return $res;
+    }
+
+    public function max_precio()
+    {
+        $res = null;
+        $this->db->select_max('precio_publico');
+        $q = $this->db->get('propiedades');
+        if ($q->num_rows() > 0) {
+            $res = $q->row();
+        }
+        return $res;
+    }
+
+    public function propiedades_filtros($limit = 10, $offset = 0, $tipo_propiedad = '', $ubicacion = '', $cuartos = '', $precio_min = '', $precio_max = '')
+    {
+        $res = array();
+        if ($tipo_propiedad != '') {
+            $this->db->where('tipo_propiedad_id', $tipo_propiedad);
+        }
+        if ($ubicacion != ''){
+            $this->db->where('estado', $ubicacion);
+        }
+        if ($cuartos != ''){
+            $this->db->where('cuartos', $cuartos);
+        }
+        if ($precio_min != ''){
+            $this->db->where('precio_publico >=', $precio_min);
+        }
+        if ($precio_max != ''){
+            $this->db->where('precio_publico <=', $precio_max);
+        }
+        $q = $this->db->limit($limit, $offset)->order_by('propiedades_id DESC')->get('v_propiedades_completo');
+        if ($q->num_rows() > 0) {
+            $res = $q->result();
+        }
+        return $res;
+    }
+
 }

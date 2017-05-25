@@ -114,27 +114,31 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1><?php echo trans_line('Propiedades'); ?><span><?php echo trans_line('listado_para_venta_renta'); ?> - 123 <?php echo trans_line('propiedades'); ?></h1>
+                        <h1><?php echo trans_line('Propiedades'); ?>
+                            <span><?php echo trans_line('listado_para_venta_renta'); ?>
+                                - <?php echo $cuantas_propiedades; ?> <?php echo trans_line('propiedades'); ?></h1>
                         <ul class="breadcrumb breadcrumb-valign-mid">
-                            <li><a href="<?php echo base_url_lang(); ?>"><?php echo trans_line('breadcrumb_inicio'); ?></a></li>
+                            <li>
+                                <a href="<?php echo base_url_lang(); ?>"><?php echo trans_line('breadcrumb_inicio'); ?></a>
+                            </li>
                             <li class="active"><?php echo trans_line('breadcrumb_pagina'); ?></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row mt-lg">
                     <div class="col-md-12">
-
-                        <form id="propertiesForm" action="demo-real-estate-properties.html" method="POST">
+                        <form id="propertiesForm" action="<?php echo base_url() . 'propiedades/buscar'?>" method="POST">
                             <div class="row">
+                                <?php $busqueda_dto = obtener_buscador_dto(); ?>
                                 <div class="col-md-2">
                                     <div class="form-control-custom mb-md">
                                         <select class="form-control text-uppercase font-size-sm"
                                                 name="propertiesPropertyType"
-                                                data-msg-required="This field is required." id="propertiesPropertyType"
-                                                required="">
-                                            <option value="">Property Type</option>
-                                            <option value="1">Apartment</option>
-                                            <option value="2">House</option>
+                                                data-msg-required="This field is required." id="propertiesPropertyType">
+                                            <option value=""><?php echo trans_line('buscador_tipo_propiedad'); ?></option>
+                                            <?php foreach ($busqueda_dto->tipos_propiedades as $busqueda_tipos_propiedades): ?>
+                                                <option value="<?php echo $busqueda_tipos_propiedades->tipo_propiedad_id; ?>" <?php echo set_select('propertiesPropertyType', $busqueda_tipos_propiedades->tipo_propiedad_id); ?>><?php echo $busqueda_tipos_propiedades->nombre; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -142,25 +146,24 @@
                                     <div class="form-control-custom mb-md">
                                         <select class="form-control text-uppercase font-size-sm"
                                                 name="propertiesLocation" data-msg-required="This field is required."
-                                                id="propertiesLocation" required="">
-                                            <option value="">Location</option>
-                                            <option value="1">Miami</option>
-                                            <option value="2">New York</option>
-                                            <option value="3">Houston</option>
-                                            <option value="4">Los Angeles</option>
+                                                id="propertiesLocation">
+                                            <option value=""><?php echo trans_line('buscador_estado'); ?></option>
+                                            <?php foreach ($busqueda_dto->ubicaciones as $busqueda_ubicacion): ?>
+                                                <option value="<?php echo $busqueda_ubicacion->estado; ?>" <?php echo set_select('propertiesLocation', $busqueda_ubicacion->estado); ?>><?php echo $busqueda_ubicacion->estado; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-control-custom mb-md">
                                         <select class="form-control text-uppercase font-size-sm"
-                                                name="propertiesMin<?php echo trans_line('cuartos'); ?>" data-msg-required="This field is required."
-                                                id="propertiesMin<?php echo trans_line('cuartos'); ?>" required="">
-                                            <option value="">Min <?php echo trans_line('cuartos'); ?></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
+                                                name="propertiesMinBeds"
+                                                data-msg-required="This field is required."
+                                                id="propertiesMinBeds">
+                                            <option value=""><?php echo trans_line('buscador_cuartos'); ?></option>
+                                            <?php foreach ($busqueda_dto->cuartos as $busqueda_cuarto): ?>
+                                                <option value="<?php echo $busqueda_cuarto; ?>" <?php echo set_select('propertiesMinBeds', $busqueda_cuarto); ?>><?php echo $busqueda_cuarto; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -168,47 +171,11 @@
                                     <div class="form-control-custom mb-md">
                                         <select class="form-control text-uppercase font-size-sm"
                                                 name="propertiesMinPrice" data-msg-required="This field is required."
-                                                id="propertiesMinPrice" required="">
-                                            <option value="">Min Price</option>
-                                            <option value="150000">$150,000</option>
-                                            <option value="200000">$200,000</option>
-                                            <option value="250000">$250,000</option>
-                                            <option value="300000">$300,000</option>
-                                            <option value="350000">$350,000</option>
-                                            <option value="400000">$400,000</option>
-                                            <option value="450000">$450,000</option>
-                                            <option value="500000">$500,000</option>
-                                            <option value="550000">$550,000</option>
-                                            <option value="600000">$600,000</option>
-                                            <option value="650000">$650,000</option>
-                                            <option value="700000">$700,000</option>
-                                            <option value="750000">$750,000</option>
-                                            <option value="800000">$800,000</option>
-                                            <option value="850000">$850,000</option>
-                                            <option value="900000">$900,000</option>
-                                            <option value="950000">$950,000</option>
-                                            <option value="1000000">$1,000,000</option>
-                                            <option value="1250000">$1,250,000</option>
-                                            <option value="1500000">$1,500,000</option>
-                                            <option value="1750000">$1,750,000</option>
-                                            <option value="2000000">$2,000,000</option>
-                                            <option value="2250000">$2,250,000</option>
-                                            <option value="2500000">$2,500,000</option>
-                                            <option value="2750000">$2,750,000</option>
-                                            <option value="3000000">$3,000,000</option>
-                                            <option value="3250000">$3,250,000</option>
-                                            <option value="3500000">$3,500,000</option>
-                                            <option value="3750000">$3,750,000</option>
-                                            <option value="4000000">$4,000,000</option>
-                                            <option value="4250000">$4,250,000</option>
-                                            <option value="4500000">$4,500,000</option>
-                                            <option value="4750000">$4,750,000</option>
-                                            <option value="5000000">$5,000,000</option>
-                                            <option value="6000000">$6,000,000</option>
-                                            <option value="7000000">$7,000,000</option>
-                                            <option value="8000000">$8,000,000</option>
-                                            <option value="9000000">$9,000,000</option>
-                                            <option value="10000000">$10,000,000</option>
+                                                id="propertiesMinPrice">
+                                            <option value=""><?php echo trans_line('buscador_precio_min'); ?></option>
+                                            <?php foreach ($busqueda_dto->precios as $busqueda_precio): ?>
+                                                <option value="<?php echo $busqueda_precio; ?>" <?php echo set_select('propertiesMinPrice', $busqueda_precio); ?>>$<?php echo number_format($busqueda_precio); ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -216,47 +183,11 @@
                                     <div class="form-control-custom mb-md">
                                         <select class="form-control text-uppercase font-size-sm"
                                                 name="propertiesMaxPrice" data-msg-required="This field is required."
-                                                id="propertiesMaxPrice" required="">
-                                            <option value="">Max Price</option>
-                                            <option value="150000">$150,000</option>
-                                            <option value="200000">$200,000</option>
-                                            <option value="250000">$250,000</option>
-                                            <option value="300000">$300,000</option>
-                                            <option value="350000">$350,000</option>
-                                            <option value="400000">$400,000</option>
-                                            <option value="450000">$450,000</option>
-                                            <option value="500000">$500,000</option>
-                                            <option value="550000">$550,000</option>
-                                            <option value="600000">$600,000</option>
-                                            <option value="650000">$650,000</option>
-                                            <option value="700000">$700,000</option>
-                                            <option value="750000">$750,000</option>
-                                            <option value="800000">$800,000</option>
-                                            <option value="850000">$850,000</option>
-                                            <option value="900000">$900,000</option>
-                                            <option value="950000">$950,000</option>
-                                            <option value="1000000">$1,000,000</option>
-                                            <option value="1250000">$1,250,000</option>
-                                            <option value="1500000">$1,500,000</option>
-                                            <option value="1750000">$1,750,000</option>
-                                            <option value="2000000">$2,000,000</option>
-                                            <option value="2250000">$2,250,000</option>
-                                            <option value="2500000">$2,500,000</option>
-                                            <option value="2750000">$2,750,000</option>
-                                            <option value="3000000">$3,000,000</option>
-                                            <option value="3250000">$3,250,000</option>
-                                            <option value="3500000">$3,500,000</option>
-                                            <option value="3750000">$3,750,000</option>
-                                            <option value="4000000">$4,000,000</option>
-                                            <option value="4250000">$4,250,000</option>
-                                            <option value="4500000">$4,500,000</option>
-                                            <option value="4750000">$4,750,000</option>
-                                            <option value="5000000">$5,000,000</option>
-                                            <option value="6000000">$6,000,000</option>
-                                            <option value="7000000">$7,000,000</option>
-                                            <option value="8000000">$8,000,000</option>
-                                            <option value="9000000">$9,000,000</option>
-                                            <option value="10000000">$10,000,000</option>
+                                                id="propertiesMaxPrice">
+                                            <option value=""><?php echo trans_line('buscador_precio_max'); ?></option>
+                                            <?php foreach ($busqueda_dto->precios as $busqueda_precio): ?>
+                                                <option value="<?php echo $busqueda_precio; ?>" <?php echo set_select('propertiesMaxPrice', $busqueda_precio); ?>>$<?php echo number_format($busqueda_precio); ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -274,12 +205,14 @@
         <div class="container">
 
             <div class="row mb-lg">
-
+                <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', '</div>'); ?>
+                <?php echo get_bootstrap_alert(); ?>
                 <ul class="properties-listing sort-destination p-none">
                     <?php foreach ($propiedades as $prop): ?>
                         <li class="col-md-4 col-sm-6 col-xs-12 p-md isotope-item">
                             <div class="listing-item">
-                                <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop->propiedades_id; ?>" class="text-decoration-none">
+                                <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop->propiedades_id; ?>"
+                                   class="text-decoration-none">
                                 <span class="thumb-info thumb-info-lighten">
                                     <span class="thumb-info-wrapper m-none">
                                         <img src="<?php echo $prop->img; ?>"

@@ -29,3 +29,5 @@ $lang['propiedades'] = 'propiedades';
 $lang['Propiedades'] = 'Propiedades';
 
 $lang['buscar'] = 'Buscar';
+
+$lang['alerta_sin_resultados'] = 'No hay resultados para su búsqueda';
