@@ -193,7 +193,7 @@
         <!-- FOOTER INICIO -->
         <?php echo $this->cargar_elementos_manager->carga_con_lang('footers/footers_web_1'); ?>
         <!-- FOOTER FIN -->
-        
+
     </div>
 </div>
 

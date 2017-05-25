@@ -101,11 +101,11 @@ class Propiedad
 
     public function propiedades_filtros($limit = 10, $offset = 0, $busqueda_dto = null)
     {
-        if (is_null($busqueda_dto)){
+        if (is_null($busqueda_dto)) {
             return $this->propiedades_todas($limit, $offset);
         }
 
-        if (!is_object($busqueda_dto)){
+        if (!is_object($busqueda_dto)) {
             return $this->propiedades_todas($limit, $offset);
         }
 
@@ -117,6 +117,52 @@ class Propiedad
         $propiedades = $this->CI->propiedades_model->propiedades_filtros($limit, $offset, $tipo_propiedad, $ubicacion, $cuartos, $precio_min, $precio_max);
         $propiedades = $this->asigna_img_a_propiedades($propiedades);
         return $propiedades;
+    }
+
+    public function inserta_propiedades_xlsx($xslx = array())
+    {
+        $this->CI->load->library('business/Catalogos');
+        $this->CI->load->model('estatus_propiedades_model');
+        $tipos_propiedades = $this->CI->catalogos->tipos_propiedades_array();
+        foreach ($xslx as $key => $fila) {
+            if ($key == 1) {
+                continue;
+            }
+            $insrt = array();
+            $insrt['propiedades_id'] = $fila['A'];
+            $insrt['tipo_propiedad_id'] = array_search($fila['B'], $tipos_propiedades);
+            $insrt['descripcion_es'] = $fila['C'];
+            $insrt['descripcion_en'] = $fila['D'];
+            $insrt['metros_utiles'] = $fila['E'];
+            $insrt['metros_construidos'] = $fila['F'];
+            $insrt['cuartos'] = $fila['G'];
+            $insrt['salas'] = $fila['H'];
+            $insrt['cocinas'] = $fila['I'];
+            $insrt['banos'] = $fila['J'];
+            $insrt['cajones_estacionamiento'] = $fila['K'];
+            $insrt['precio_avaluo'] = $fila['L'];
+            $insrt['precio_publico'] = $fila['M'];
+            $insrt['longitud'] = $fila['W'];
+            $insrt['latitud'] = $fila['V'];
+            $insrt['calle'] = $fila['P'];
+            $insrt['no_exterior'] = $fila['Q'];
+            $insrt['no_interior'] = $fila['R'];
+            $insrt['colonia'] = $fila['S'];
+            $insrt['municipio'] = $fila['O'];
+            $insrt['estado'] = $fila['T'];
+            $insrt['pais'] = $fila['U'];
+            $insrt['codigo_postal'] = $fila['N'];
+            if ($this->CI->propiedades_model->insertar_propiedad($insrt)) {
+                $ep_ins['propiedades_id'] = $insrt['propiedades_id'];
+                $ep_ins['estatus_propiedad_id'] = 1; // TODOS SON VENTAS
+                if (!$this->CI->estatus_propiedades_model->insertar_estatus($ep_ins)) {
+                    return 'Error insertar relacion cerca de id: ' . $insrt['propiedades_id'];
+                }
+            } else {
+                return 'Error insertar cerca de id: ' . $this->ultimo_id();
+            }
+        }
+        return 'Todas las propiedades insertadas';
     }
 
 }

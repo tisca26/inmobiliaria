@@ -59,6 +59,9 @@ die('This file is used for development purposes only.');
  * @property Ispconfig           $ispconfig                           This class enables you to use the ISPConfig 3 Remote API
  * @property Propiedad           $propiedad                           Propiedad Class
  * @property Agente              $agente                              Agente Class
+ * @property Catalogos           $catalogos                           Catalogos Class
+ * @property Filtros_busqueda    $filtros_busqueda                    Flitros class
+ * @property Lector_archivos     $lector_archivos                     Lector Class
  */
 class CI_Controller {
 
@@ -114,6 +117,7 @@ class CI_Controller {
  * @property CI_Utf8             $utf8                                Provides support for UTF-8 environments
  * @property Propiedades_model   $propiedades_model                   Model propiedades
  * @property Agentes_model       $agentes_model                       agentes_model
+ * @property Tipo_propiedad_model $tipo_propiedad_model               Tipo propiedad Class
  */
 class CI_Model {
 

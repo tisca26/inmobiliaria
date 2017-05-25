@@ -167,4 +167,8 @@ class Propiedades_model extends CI_Model
         return $res;
     }
 
+    public function insertar_propiedad($data = array()){
+        return $this->db->insert('propiedades', $data);
+    }
+
 }
