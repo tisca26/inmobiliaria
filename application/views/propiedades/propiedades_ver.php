@@ -153,17 +153,17 @@
                                         <?php foreach ($propiedad_imgs as $img): ?>
                                             <div>
                                                 <a href="<?php echo $img; ?>">
-														<span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
-															<span class="thumb-info-wrapper font-size-xl">
-																<img alt="Property Detail"
-                                                                     src="<?php echo $img; ?>"
-                                                                     class="img-responsive">
-																<span class="thumb-info-title font-size-xl">
-																	<span class="thumb-info-inner font-size-xl"><i
-                                                                                class="icon-magnifier icons font-size-xl"></i></span>
-																</span>
-															</span>
-														</span>
+                                                    <span class="thumb-info thumb-info-centered-info thumb-info-no-borders font-size-xl">
+                                                        <span class="thumb-info-wrapper font-size-xl">
+                                                            <img alt="Property Detail"
+                                                                 src="<?php echo $img; ?>"
+                                                                 class="img-responsive">
+                                                            <span class="thumb-info-title font-size-xl">
+                                                                <span class="thumb-info-inner font-size-xl"><i
+                                                                            class="icon-magnifier icons font-size-xl"></i></span>
+                                                            </span>
+                                                        </span>
+                                                    </span>
                                                 </a>
                                             </div>
                                         <?php endforeach; ?>
@@ -319,46 +319,35 @@
                 <div class="col-md-3">
                     <aside class="sidebar">
                         <div class="agents text-color-light center">
-                            <h4 class="text-light pt-xl m-none">Property Agents</h4>
+                            <h4 class="text-light pt-xl m-none"><?php echo trans_line('nuestros_agentes'); ?></h4>
                             <div class="owl-carousel owl-theme nav-bottom rounded-nav pl-xs pr-xs pt-md m-none"
                                  data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
+                                <?php foreach ($agentes as $agente): ?>
+                                    <div class="pr-sm pl-sm">
+                                        <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
+                                            <span class="agent-thumb">
+                                                <img class="img-responsive img-circle" src="<?php echo $agente->img_profile; ?>" alt="<?php EMPRESA_NOMBRE; ?>"/>
+                                            </span>
+                                            <span class="agent-infos text-light pt-md">
+                                                <strong class="text-uppercase font-weight-bold"><?php echo $agente->nombre . ' ' . $agente->apellido_paterno; ?></strong>
+                                                <span class="font-weight-light"><?php echo $agente->tel_movil; ?></span>
+                                                <span class="font-weight-light"><?php echo $agente->email; ?></span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                <?php endforeach; ?>
                                 <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-11.jpg" alt/>
-												</span>
+                                    <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
+                                        <span class="agent-thumb">
+                                            <img class="img-responsive img-circle"
+                                                 src="<?php echo base_url_slash() . AGENTE_IMG_BASE; ?>"
+                                                 alt="<?php echo EMPRESA_NOMBRE; ?>"/>
+                                        </span>
                                         <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Bruno Doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">bruno@domain.com</span>
-												</span>
-                                    </a>
-                                </div>
-                                <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-12.jpg" alt/>
-												</span>
-                                        <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Jeff doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">jeffdoe@domain.com</span>
-												</span>
-                                    </a>
-                                </div>
-                                <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
-												<span class="agent-thumb">
-													<img class="img-responsive img-circle"
-                                                         src="<?php echo cdn_assets(); ?>/img/team/team-13.jpg" alt/>
-												</span>
-                                        <span class="agent-infos text-light pt-md">
-													<strong class="text-uppercase font-weight-bold">Jessica Doe</strong>
-													<span class="font-weight-light">123-456-789</span>
-													<span class="font-weight-light">jessicadoe@domain.com</span>
-												</span>
+                                            <strong class="text-uppercase font-weight-bold"><?php echo EMPRESA_NOMBRE; ?></strong>
+                                            <span class="font-weight-light"><?php echo EMPRESA_TELEFONO; ?></span>
+                                            <span class="font-weight-light"><?php echo EMPRESA_MAIL; ?></span>
+                                        </span>
                                     </a>
                                 </div>
                             </div>

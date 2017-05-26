@@ -16,9 +16,9 @@ class Contacto extends CI_Controller
         header('Content-type: application/json');
         require_once(APPPATH . 'libraries/phpmailer/PHPMailerAutoload.php');
 
-        $email_recipient = 'gerardo.tiscareno@oficinas-virtuales-amuebladas.com';
-        $usr_mail = 'gerardo.tiscareno@oficinas-virtuales-amuebladas.com';
-        $pass_mail = 'Bianconeri26!Pinturicchio10';
+        $email_recipient = 'ventas@okan.capital';
+        $usr_mail = 'ventas@okan.capital';
+        $pass_mail = 'Ventas123!';
 
         $debug = 2;
 
@@ -43,14 +43,14 @@ class Contacto extends CI_Controller
             // Step 2 (Optional) - If you don't receive the email, try to configure the parameters below:
 
             $mail->IsSMTP();                                         // Set mailer to use SMTP
-            $mail->Host = 'mail.oficinas-virtuales-amuebladas.com';                       // Specify main and backup server
+            $mail->Host = 'mail.okan.capital';                       // Specify main and backup server
             $mail->SMTPAuth = true;                                  // Enable SMTP authentication
             $mail->Username = $usr_mail;                    // SMTP username
             $mail->Password = $pass_mail;                              // SMTP password
-            $mail->SMTPSecure = 'ssl';                               // Enable encryption, 'ssl' also accepted
-            $mail->Port = 465;                                       // TCP port to connect to
+            $mail->SMTPSecure = '';                               // Enable encryption, 'ssl' also accepted
+            $mail->Port = 25;                                       // TCP port to connect to
 
-            $mail->AddAddress($email);                                   // Add another recipient
+            $mail->AddAddress($email_recipient);                                   // Add another recipient
 
             //$mail->AddAddress('person2@domain.com', 'Person 2');     // Add a secondary recipient
             //$mail->AddCC('person3@domain.com', 'Person 3');          // Add a "Cc" address.

@@ -9,6 +9,8 @@ $lang['breadcrumb_inicio'] = 'Inicio';
 $lang['breadcrumb_pagina'] = 'Acerca';
 $lang['breadcrumb_subpagina'] = 'Nosotros';
 
+$lang['nuestros_agentes'] = 'Nuestros agentes';
+
 $lang['Nosotros'] = 'Nosotros';
 
 $lang['p01'] = 'Founded in 1999 by John Doe, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat.';

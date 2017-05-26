@@ -37,7 +37,7 @@ class Filtros_busqueda
         $max_precio = 0;
         $obj_precio = $this->CI->propiedades_model->max_precio();
         if (is_object($obj_precio)) {
-            $max_precio = round($obj_precio->precio_publico);
+            $max_precio = round($obj_precio->precio_publico) + 100000;
         }
         return range(0, $max_precio, 100000);
     }

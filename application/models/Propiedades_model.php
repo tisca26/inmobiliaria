@@ -92,9 +92,24 @@ class Propiedades_model extends CI_Model
         return $res;
     }
 
-    public function cuantas_propiedades()
+    public function cuantas_propiedades($tipo_propiedad = '', $ubicacion = '', $cuartos = '', $precio_min = '', $precio_max = '')
     {
         $res = 0;
+        if ($tipo_propiedad != '') {
+            $this->db->where('tipo_propiedad_id', $tipo_propiedad);
+        }
+        if ($ubicacion != ''){
+            $this->db->where('estado', $ubicacion);
+        }
+        if ($cuartos != ''){
+            $this->db->where('cuartos', $cuartos);
+        }
+        if ($precio_min != ''){
+            $this->db->where('precio_publico >=', $precio_min);
+        }
+        if ($precio_max != ''){
+            $this->db->where('precio_publico <=', $precio_max);
+        }
         $q = $this->db->get('v_propiedades_completo');
         $res = $q->num_rows();
         return $res;
@@ -160,7 +175,7 @@ class Propiedades_model extends CI_Model
         if ($precio_max != ''){
             $this->db->where('precio_publico <=', $precio_max);
         }
-        $q = $this->db->limit($limit, $offset)->order_by('propiedades_id DESC')->get('v_propiedades_completo');
+        $q = $this->db->limit($limit, $offset)->order_by('precio_publico DESC')->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }

@@ -87,9 +87,21 @@ class Propiedad
         return $this->CI->propiedades_model->cuantas_oferta_especial();
     }
 
-    public function cuantas_propiedades()
+    public function cuantas_propiedades($busqueda_dto = null)
     {
-        return $this->CI->propiedades_model->cuantas_propiedades();
+        if (is_null($busqueda_dto)) {
+            return $this->CI->propiedades_model->cuantas_propiedades();
+        }
+
+        if (!is_object($busqueda_dto)) {
+            return $this->CI->propiedades_model->cuantas_propiedades();
+        }
+        $tipo_propiedad = isset($busqueda_dto->tipo_propiedad) ? $busqueda_dto->tipo_propiedad : '';
+        $ubicacion = isset($busqueda_dto->ubicacion) ? $busqueda_dto->ubicacion : '';
+        $cuartos = isset($busqueda_dto->cuartos) ? $busqueda_dto->cuartos : '';
+        $precio_min = isset($busqueda_dto->min_precio) ? $busqueda_dto->min_precio : '';
+        $precio_max = isset($busqueda_dto->max_precio) ? $busqueda_dto->max_precio : '';
+        return $this->CI->propiedades_model->cuantas_propiedades($tipo_propiedad, $ubicacion, $cuartos, $precio_min, $precio_max);
     }
 
     public function propiedades_todas($limit = 10, $offset = 0)

@@ -342,9 +342,8 @@
                                 <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop_especial->propiedades_id; ?>"
                                    class="text-decoration-none">
                                     <span class="special-offer-wrapper">
-                                        <img src="<?php echo $prop_especial->img; ?>"
-                                             class="img-responsive" alt="">
-                                        <span class="special-offer-infos text-color-light">
+                                        <img src="<?php echo $prop_especial->img; ?>" class="" alt="" width="262" height="280" >
+                                        <span class="special-offer-infos text-color-light pt-lg">
                                             <span class="special-offer-description font-weight-light text-lg">
                                                 <?php echo $prop_especial->calle . ' - ' . $prop_especial->no_exterior; ?>
                                                 <br>
@@ -367,7 +366,7 @@
                                  data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
                                 <?php foreach ($agentes as $agente): ?>
                                     <div class="pr-sm pl-sm">
-                                        <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
+                                        <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
                                             <span class="agent-thumb">
                                                 <img class="img-responsive img-circle" src="<?php echo $agente->img_profile; ?>" alt="<?php EMPRESA_NOMBRE; ?>"/>
                                             </span>
@@ -380,7 +379,7 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <div class="pr-sm pl-sm">
-                                    <a href="demo-real-estate-agents-detail.html" class="text-decoration-none">
+                                    <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
                                         <span class="agent-thumb">
                                             <img class="img-responsive img-circle"
                                                  src="<?php echo base_url_slash() . AGENTE_IMG_BASE; ?>"

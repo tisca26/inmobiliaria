@@ -58,7 +58,7 @@ class Propiedades extends CI_Controller
         $this->load->library('business/Propiedad');
         $prop_a_mostrar = 6;
         $propiedades = $this->propiedad->propiedades_filtros($prop_a_mostrar, $offset, $this->session->userdata('busqueda_dto'));
-        $cuantas_propiedades = count($propiedades);
+        $cuantas_propiedades = $this->propiedad->cuantas_propiedades($this->session->userdata('busqueda_dto'));
         if ($cuantas_propiedades < 1){
             set_bootstrap_alert(trans_line('alerta_sin_resultados'), BOOTSTRAP_ALERT_INFO);
         }
@@ -82,6 +82,11 @@ class Propiedades extends CI_Controller
         $propiedad_imgs = $this->propiedad->imagenes_por_propiedad_id($propiedad_id);
         $data['propiedad'] = $propiedad;
         $data['propiedad_imgs'] = $propiedad_imgs;
+
+        $this->load->library('business/Agente');
+        $agentes = $this->agente->agente_todos();
+        $data['agentes'] = $agentes;
+
         $this->cargar_idioma->carga_lang('propiedades/propiedades_ver');
         $this->load->view('propiedades/propiedades_ver', $data);
     }

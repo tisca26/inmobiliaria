@@ -50,4 +50,6 @@ $lang['descripcion'] = 'Descripción';
 $lang['caracteristicas'] = 'Características';
 $lang['ubicacion'] = 'Ubicación';
 
+$lang['nuestros_agentes'] = 'Nuestros agentes';
+
 $lang['informacion_requerida'] = 'Información requerida';
