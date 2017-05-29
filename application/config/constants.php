@@ -101,7 +101,7 @@ defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(55) 1107-0650');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'ventas@okan.capital');
 defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'work_n_office');
 defined('GMAPS_APIKEY')  OR define('GMAPS_APIKEY', 'AIzaSyC-Y91-j5IhDX9IgKdN4sCVqRickVvoPvg');
-defined('EMPRESA_LOGO')  OR define('EMPRESA_LOGO', '/img/demos/real-estate/logo_original_v1.png');
+defined('EMPRESA_LOGO')  OR define('EMPRESA_LOGO', '/img/demos/real-estate/logo_original_v5.png');
 
 /*
  * IMAGENES DE PROPIEDADES

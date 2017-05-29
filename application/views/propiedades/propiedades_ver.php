@@ -84,7 +84,7 @@
                     <div class="header-column">
                         <div class="header-logo">
                             <a href="<?php echo base_url_lang(); ?>">
-                                <img alt="Porto" width="143" height="40"
+                                <img alt="<?php echo EMPRESA_NOMBRE; ?>" width="190" height="75"
                                      src="<?php echo cdn_assets() . EMPRESA_LOGO; ?>">
                             </a>
                         </div>
