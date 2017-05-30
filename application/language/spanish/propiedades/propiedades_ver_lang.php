@@ -53,3 +53,18 @@ $lang['ubicacion'] = 'Ubicación';
 $lang['nuestros_agentes'] = 'Nuestros agentes';
 
 $lang['informacion_requerida'] = 'Información requerida';
+
+$lang['contacto_titulo'] = 'Contáctanos para obtener más información';
+$lang['c_nombre'] = 'Nombre';
+$lang['c_p_nombre'] = 'Por favor ingrese su nombre';
+$lang['c_email'] = 'Email';
+$lang['c_p_email'] = 'Por favor ingrese su email';
+$lang['c_p_email2'] = 'Por favor ingrese un email válido';
+$lang['c_tel'] = 'Teléfono';
+$lang['c_p_tel'] = 'Por favor ingrese su teléfono';
+$lang['c_mensaje'] = 'Mensaje';
+$lang['c_p_mensaje'] = 'Por favor ingrese su mensaje';
+$lang['c_enviar'] = 'Enviar';
+$lang['c_cargando'] = 'Cargando...';
+$lang['msj_exito'] = 'El mensaje se envió con éxito';
+$lang['msj_error'] = 'Error al enviar el mensaje';

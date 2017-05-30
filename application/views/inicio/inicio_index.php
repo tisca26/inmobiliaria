@@ -84,7 +84,8 @@
                     <div class="header-column">
                         <div class="header-logo">
                             <a href="<?php echo base_url_lang(); ?>">
-                                <img alt="<?php echo EMPRESA_NOMBRE; ?>" width="190" height="75" src="<?php echo cdn_assets() . EMPRESA_LOGO; ?>">
+                                <img alt="<?php echo EMPRESA_NOMBRE; ?>" width="190" height="75"
+                                     src="<?php echo cdn_assets() . EMPRESA_LOGO; ?>">
                             </a>
                         </div>
                     </div>
@@ -278,57 +279,26 @@
                         </div>
                     </div>
                     <div class="row pb-lg mb-xlg">
-                        <div class="col-sm-4 col-md-4">
-                            <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
-                                   class="text-decoration-none">
+                        <?php $busqueda_dto = obtener_buscador_dto(); ?>
+                        <?php foreach ($busqueda_dto->ubicaciones as $busqueda_ubicacion): ?>
+                            <div class="col-sm-4 col-md-4">
+                                <div class="special-offer-item center text-color-light">
+                                    <a href="<?php echo base_url_lang_slash() . 'propiedades/ver_ubicacion/' . urlencode($busqueda_ubicacion->estado); ?>"
+                                       class="text-decoration-none">
                                     <span class="special-offer-wrapper">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-1.jpg"
-                                             class="img-responsive" alt="">
+                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/logo_alto.png"
+                                             class="img-responsive" alt="<?php EMPRESA_NOMBRE; ?>">
                                         <span class="special-offer-infos text-color-light">
                                             <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
-                                                Palm Beach
+                                                <?php echo $busqueda_ubicacion->estado; ?>
                                             </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">11 <?php echo trans_line('propiedades'); ?></button>
+                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md"><?php echo trans_line('cargar_mas'); ?></button>
                                         </span>
                                     </span>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
-                            <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
-                                   class="text-decoration-none">
-                                    <span class="special-offer-wrapper">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-2.jpg"
-                                             class="img-responsive" alt="">
-                                        <span class="special-offer-infos text-color-light">
-                                            <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
-                                                Fischer Island
-                                            </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">2 <?php echo trans_line('propiedades'); ?></button>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-md-4 xs-custom-mt-xlg">
-                            <div class="special-offer-item center text-color-light">
-                                <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
-                                   class="text-decoration-none">
-                                    <span class="special-offer-wrapper">
-                                        <img src="<?php echo cdn_assets(); ?>/img/demos/real-estate/listings/listing-exclusive-location-3.jpg"
-                                             class="img-responsive" alt="">
-                                        <span class="special-offer-infos text-color-light">
-                                            <span class="special-offer-title font-weight-normal text-lg p-xs mb-xs">
-                                                South Miami
-                                            </span>
-                                            <button class="btn btn-secondary text-uppercase p-sm pl-md pr-md">25 <?php echo trans_line('propiedades'); ?></button>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -341,7 +311,8 @@
                                 <a href="<?php echo base_url_lang_slash() . 'propiedades/ver/' . $prop_especial->propiedades_id; ?>"
                                    class="text-decoration-none">
                                     <span class="special-offer-wrapper">
-                                        <img src="<?php echo $prop_especial->img; ?>" class="" alt="" width="262" height="280" >
+                                        <img src="<?php echo $prop_especial->img; ?>" class="" alt="" width="262"
+                                             height="280">
                                         <span class="special-offer-infos text-color-light pt-lg">
                                             <span class="special-offer-description font-weight-light text-lg">
                                                 <?php echo $prop_especial->calle . ' - ' . $prop_especial->no_exterior; ?>
@@ -365,9 +336,12 @@
                                  data-plugin-options="{'items': 1, 'loop': false, 'dots': false, 'nav': true}">
                                 <?php foreach ($agentes as $agente): ?>
                                     <div class="pr-sm pl-sm">
-                                        <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
+                                        <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>"
+                                           class="text-decoration-none">
                                             <span class="agent-thumb">
-                                                <img class="img-responsive img-circle" src="<?php echo $agente->img_profile; ?>" alt="<?php EMPRESA_NOMBRE; ?>"/>
+                                                <img class="img-responsive img-circle"
+                                                     src="<?php echo $agente->img_profile; ?>"
+                                                     alt="<?php EMPRESA_NOMBRE; ?>"/>
                                             </span>
                                             <span class="agent-infos text-light pt-md">
                                                 <strong class="text-uppercase font-weight-bold"><?php echo $agente->nombre . ' ' . $agente->apellido_paterno; ?></strong>
@@ -378,7 +352,8 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <div class="pr-sm pl-sm">
-                                    <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>" class="text-decoration-none">
+                                    <a href="<?php echo base_url_lang_slash() . 'agentes'; ?>"
+                                       class="text-decoration-none">
                                         <span class="agent-thumb">
                                             <img class="img-responsive img-circle"
                                                  src="<?php echo base_url_slash() . AGENTE_IMG_BASE; ?>"

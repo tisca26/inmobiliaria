@@ -27,6 +27,7 @@ $lang['mes'] = 'mes';
 
 $lang['propiedades'] = 'propiedades';
 $lang['Propiedades'] = 'Propiedades';
+$lang['propiedades_en'] = 'Propiedades en ';
 
 $lang['buscar'] = 'Buscar';
 

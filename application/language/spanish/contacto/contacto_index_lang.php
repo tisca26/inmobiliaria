@@ -29,3 +29,6 @@ $lang['c_cargando'] = 'Cargando...';
 
 $lang['oficina'] = 'Nuestra oficina';
 $lang['horario'] = 'Horario';
+$lang['horario_semana'] = 'Lunes - Viernes - 9am a 6:30pm';
+$lang['horario_sabado'] = 'Sábado - 9am a 1pm';
+$lang['horario_domingo'] = 'Domingo - Cerrado';

@@ -113,4 +113,40 @@ class Propiedades extends CI_Controller
             $this->pag(0);
         }
     }
+
+    public function ver_tipo($tipo = 0)
+    {
+        $busqueda_dto = new stdClass();
+        $busqueda_dto->tipo_propiedad = $tipo;
+        $this->session->set_userdata('busqueda_dto', $busqueda_dto);
+        return $this->pag(0);
+    }
+
+    public function ver_ubicacion($ubicacion = '')
+    {
+        $this->cargar_idioma->carga_lang('propiedades/propiedades_index');
+        set_bootstrap_alert(trans_line('propiedades_en') . urldecode($ubicacion), BOOTSTRAP_ALERT_INFO);
+        $busqueda_dto = new stdClass();
+        $busqueda_dto->ubicacion = urldecode($ubicacion);
+        $this->session->set_userdata('busqueda_dto', $busqueda_dto);
+        return $this->pag(0);
+    }
+
+    public function contacto()
+    {
+        $this->load->library('Correo');
+        $asunto = 'Solicitud de información';
+        $nombre = $this->input->post('name');
+        $email = $this->input->post('email');
+        $tel = $this->input->post('telefono');
+        $mensaje = $this->input->post('message');
+        $propiedades_id = $this->input->post('propiedad');
+        $data['nombre'] = $nombre;
+        $data['email'] = $email;
+        $data['telefono'] = $tel;
+        $data['mensaje'] = $mensaje;
+        $data['propiedad_url'] = base_url_lang_slash() . 'propiedades/ver/' . $propiedades_id;
+        $cuerpo_correo = $this->load->view('contacto/propiedad_correo_a_ventas', $data, TRUE);
+        return $this->correo->enviar_correo_json(EMPRESA_MAIL, $asunto, $cuerpo_correo);
+    }
 }

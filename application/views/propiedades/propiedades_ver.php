@@ -354,14 +354,14 @@
                         </div>
 
                         <h4 class="pt-lg mb-md text-color-dark"><?php echo trans_line('informacion_requerida'); ?></h4>
-                        <p>Contact us or give us a call to request more information</p>
+                        <p><?php echo trans_line('contacto_titulo'); ?></p>
 
-                        <form id="contactForm" action="php/contact-form.php" method="POST" class="mb-lg">
+                        <form id="contactFormProp" action="<?php echo base_url(); ?>propiedades/contacto" method="POST" class="mb-lg">
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <label>Your name *</label>
-                                        <input type="text" value="" data-msg-required="Please enter your name."
+                                        <label><?php echo trans_line('c_nombre'); ?> *</label>
+                                        <input type="text" value="" data-msg-required="<?php echo trans_line('c_p_nombre'); ?>"
                                                maxlength="100" class="form-control" name="name" id="name" required>
                                     </div>
                                 </div>
@@ -369,10 +369,19 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <label>Your email address *</label>
+                                        <label><?php echo trans_line('c_tel'); ?> *</label>
+                                        <input type="text" value="" data-msg-required="<?php echo trans_line('c_p_tel'); ?>"
+                                               maxlength="20" class="form-control" name="telefono" id="telefono" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label><?php echo trans_line('c_email'); ?> *</label>
                                         <input type="email" value=""
-                                               data-msg-required="Please enter your email address."
-                                               data-msg-email="Please enter a valid email address." maxlength="100"
+                                               data-msg-required="<?php echo trans_line('c_p_email'); ?>"
+                                               data-msg-email="<?php echo trans_line('c_p_email2'); ?>" maxlength="100"
                                                class="form-control" name="email" id="email" required>
                                     </div>
                                 </div>
@@ -380,34 +389,25 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <label>Subject</label>
-                                        <input type="text" value="" data-msg-required="Please enter the subject."
-                                               maxlength="100" class="form-control" name="subject" id="subject"
-                                               required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <label>Message *</label>
-                                        <textarea maxlength="5000" data-msg-required="Please enter your message."
+                                        <label><?php echo trans_line('c_mensaje'); ?> *</label>
+                                        <textarea maxlength="5000" data-msg-required="<?php echo trans_line('c_p_mensaje'); ?>"
                                                   rows="6" class="form-control" name="message" id="message"
                                                   required></textarea>
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" id="propiedad" name="propiedad" value="<?php echo $propiedad->propiedades_id; ?>">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="submit" value="Send Message" class="btn btn-secondary mb-xl"
-                                           data-loading-text="Loading...">
+                                    <input type="submit" value="<?php echo trans_line('c_enviar'); ?>" class="btn btn-secondary mb-xl"
+                                           data-loading-text="<?php echo trans_line('c_cargando'); ?>">
 
                                     <div class="alert alert-success hidden" id="contactSuccess">
-                                        Message has been sent to us.
+                                        <?php echo trans_line('msj_exito'); ?>
                                     </div>
 
                                     <div class="alert alert-danger hidden" id="contactError">
-                                        Error sending your message.
+                                        <?php echo trans_line('msj_error'); ?>
                                     </div>
                                 </div>
                             </div>
@@ -477,9 +477,9 @@
         longitude: <?php echo $propiedad->longitud; ?>,
         html: "<strong><?php echo EMPRESA_NOMBRE  . ' | ' . $propiedad->calle . ' ' . $propiedad->no_exterior; ?></strong>",
         icon: {
-            image: "<?php echo base_url(); ?>/assets/img/demos/real-estate/pin.png",
-            iconsize: [36, 36],
-            iconanchor: [36, 36]
+            image: "<?php echo base_url(); ?>/assets/img/demos/real-estate/pin_okan.png",
+            iconsize: [80, 27],
+            iconanchor: [80, 27]
         },
         popup: true
     }];

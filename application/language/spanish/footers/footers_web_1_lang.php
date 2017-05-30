@@ -12,7 +12,9 @@ $lang['footer_contacto'] = 'Contacto';
 $lang['footer_links'] = 'Links';
 $lang['footer_nosotros'] = 'Nosotros';
 
-$lang['footer_ultimos_tweets'] = 'Últimos Tweets';
+$lang['footer_redes_sociales'] = 'Nuestras redes sociales';
+$lang['footer_facebook'] = 'Facebook';
+$lang['footer_twitter'] = 'Twitter';
 $lang['footer_espere'] = 'Por favor espere...';
 
 $lang['footer_copyright'] = '© Copyright 2017. Todos los derechos reservados.';

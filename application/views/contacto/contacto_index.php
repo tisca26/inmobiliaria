@@ -186,12 +186,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="icon-social-linkedin icons"></i> Lindekin
+                            <a href="<?php echo EMPRESA_TWITTER; ?>">
+                                <i class="icon-social-twitter icons"></i> Twitter
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo EMPRESA_FACEBOOK; ?>">
                                 <i class="icon-social-facebook icons"></i> Facebook
                             </a>
                         </li>
@@ -201,9 +201,9 @@
 
                     <h4 class="heading-primary"><?php echo trans_line('horario'); ?></h4>
                     <ul class="list list-icons mt-md">
-                        <li><i class="fa fa-clock-o"></i> Monday - Friday - 9am to 5pm</li>
-                        <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
-                        <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+                        <li><i class="fa fa-clock-o"></i> <?php echo trans_line('horario_semana'); ?></li>
+                        <li><i class="fa fa-clock-o"></i> <?php echo trans_line('horario_sabado'); ?></li>
+                        <li><i class="fa fa-clock-o"></i> <?php echo trans_line('horario_domingo'); ?></li>
                     </ul>
 
                 </div>
@@ -271,19 +271,19 @@
 
     // Map Markers
     var mapMarkers = [{
-        address: "New York, NY 10017",
-        html: "<strong>Porto Real Estate</strong>",
+        address: "<?php echo EMPRESA_DIRECCION; ?>",
+        html: "<strong><?php echo EMPRESA_NOMBRE; ?></strong>",
         icon: {
-            image: "<?php echo cdn_assets(); ?>/img/demos/real-estate/pin.png",
-            iconsize: [36, 36],
-            iconanchor: [36, 36]
+            image: "<?php echo base_url(); ?>/assets/img/demos/real-estate/pin_okan.png",
+            iconsize: [80, 27],
+            iconanchor: [80, 27]
         },
         popup: true
     }];
 
     // Map Initial Location
-    var initLatitude = 40.75198;
-    var initLongitude = -73.96978;
+    var initLatitude = 19.3979907;
+    var initLongitude = -99.1728932;
 
     // Map Extended Settings
     var mapSettings = {

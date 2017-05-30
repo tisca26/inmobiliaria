@@ -99,7 +99,8 @@ defined('EMPRESA_NOMBRE')  OR define('EMPRESA_NOMBRE', 'OKAN');
 defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Insurgentes Sur 586, Del Valle, Ciudad de México');
 defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(55) 1107-0650');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'ventas@okan.capital');
-defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'work_n_office');
+defined('EMPRESA_TWITTER')  OR define('EMPRESA_TWITTER', 'https://twitter.com/ova_comunidad');
+defined('EMPRESA_FACEBOOK')  OR define('EMPRESA_FACEBOOK', 'https://www.facebook.com/comunidadova/');
 defined('GMAPS_APIKEY')  OR define('GMAPS_APIKEY', 'AIzaSyC-Y91-j5IhDX9IgKdN4sCVqRickVvoPvg');
 defined('EMPRESA_LOGO')  OR define('EMPRESA_LOGO', '/img/demos/real-estate/logo_original_v5.png');
 

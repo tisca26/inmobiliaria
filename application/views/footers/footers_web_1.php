@@ -10,21 +10,17 @@
                 </p>
             </div>
             <div class="col-md-2">
+                <?php $busqueda_dto = obtener_buscador_dto(); ?>
                 <h4 class="mb-md"><?php echo trans_line('footer_propiedades'); ?></h4>
                 <nav class="nav-footer">
                     <ul class="custom-list-style-1 pl-lg">
-                        <li>
-                            <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
-                               class="custom-color-2 text-decoration-none">
-                                <?php echo trans_line('footer_en_venta'); ?>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="demo-real-estate-<?php echo trans_line('propiedades'); ?>.html"
-                               class="custom-color-2 text-decoration-none">
-                                <?php echo trans_line('footer_en_renta'); ?>
-                            </a>
-                        </li>
+                        <?php foreach ($busqueda_dto->tipos_propiedades as $busqueda_tipos_propiedades): ?>
+                            <li>
+                                <a href="<?php echo base_url_lang_slash() . 'propiedades/ver_tipo/' . $busqueda_tipos_propiedades->tipo_propiedad_id; ?>" class="custom-color-2 text-decoration-none">
+                                    <?php echo $busqueda_tipos_propiedades->nombre; ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </nav>
             </div>
@@ -33,18 +29,18 @@
                 <nav class="nav-footer">
                     <ul class="custom-list-style-1 pl-lg">
                         <li>
-                            <a href="demo-real-estate-agents.html" class="custom-color-2 text-decoration-none">
+                            <a href="<?php echo base_url_lang_slash() . 'agentes';?>" class="custom-color-2 text-decoration-none">
                                 <?php echo trans_line('footer_agentes'); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="demo-real-estate-who-we-are.html"
+                            <a href="<?php echo base_url_lang_slash() . 'nosotros';?>"
                                class="custom-color-2 text-decoration-none">
                                 <?php echo trans_line('footer_nosotros'); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="demo-real-estate-contact.html" class="custom-color-2 text-decoration-none">
+                            <a href="<?php echo base_url_lang_slash() . 'contacto';?>" class="custom-color-2 text-decoration-none">
                                 <?php echo trans_line('footer_contacto'); ?>
                             </a>
                         </li>
@@ -52,11 +48,21 @@
                 </nav>
             </div>
             <div class="col-md-5">
-                <h4 class="mb-md"><?php echo trans_line('footer_ultimos_tweets'); ?></h4>
-<!--                <div id="tweet" class="twitter" data-plugin-tweets-->
-<!--                     data-plugin-options="{'username': '--><?php //echo EMPRESA_TWITTER ?><!--', 'count': 1}">-->
-<!--                    <p>--><?php //echo trans_line('footer_espere'); ?><!--</p>-->
-<!--                </div>-->
+                <h4 class="mb-md"><?php echo trans_line('footer_redes_sociales'); ?></h4>
+                <nav class="nav-footer">
+                    <ul class="custom-list-style-1 pl-lg">
+                        <li>
+                            <a href="<?php echo EMPRESA_FACEBOOK;?>" class="custom-color-2 text-decoration-none" target="_blank">
+                                <?php echo trans_line('footer_facebook'); ?>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo EMPRESA_TWITTER;?>" class="custom-color-2 text-decoration-none" target="_blank">
+                                <?php echo trans_line('footer_twitter'); ?>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
