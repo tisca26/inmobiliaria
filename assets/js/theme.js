@@ -2874,6 +2874,7 @@ window.theme.fn = {
 
 				var self = this,
 					$email = self.$wrapper.find('#newsletterEmail'),
+					$name = self.$wrapper.find('#newsletterName'),
 					$success = $('#newsletterSuccess'),
 					$error = $('#newsletterError');
 
@@ -2884,7 +2885,8 @@ window.theme.fn = {
 							type: 'POST',
 							url: self.$wrapper.attr('action'),
 							data: {
-								'email': $email.val()
+								'email': $email.val(),
+								'name' : $name.val()
 							},
 							dataType: 'json',
 							success: function(data) {
@@ -2899,6 +2901,12 @@ window.theme.fn = {
 										.closest('.control-group')
 										.removeClass('success')
 										.removeClass('error');
+                                    $name
+                                        .val('')
+                                        .blur()
+                                        .closest('.control-group')
+                                        .removeClass('success')
+                                        .removeClass('error');
 
 								} else {
 
@@ -2911,7 +2919,11 @@ window.theme.fn = {
 										.closest('.control-group')
 										.removeClass('success')
 										.addClass('error');
-
+                                    $name
+                                        .blur()
+                                        .closest('.control-group')
+                                        .removeClass('success')
+                                        .addClass('error');
 								}
 							}
 						});

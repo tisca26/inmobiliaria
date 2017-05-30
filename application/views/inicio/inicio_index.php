@@ -383,7 +383,7 @@
 
                             <div class="alert alert-danger hidden" id="newsletterError"></div>
 
-                            <form id="newsletterForm" class="text-black pt-sm" action="php/newsletter-subscribe.php"
+                            <form id="newsletterForm" class="text-black pt-sm" action="<?php echo base_url() . 'inicio/alta_boletin' ?>"
                                   method="POST">
                                 <input class="form-control" placeholder="<?php echo trans_line('boletin_nombre'); ?>"
                                        name="newsletterName"

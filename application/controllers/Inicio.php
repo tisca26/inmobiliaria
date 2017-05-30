@@ -22,4 +22,12 @@ class Inicio extends CI_Controller
         $this->load->view('inicio/inicio_index', $data);
     }
 
+    public function alta_boletin()
+    {
+        $this->load->library('Mailchimp_lib');
+        $nombre = $this->input->post('name');
+        $email = $this->input->post('email');
+        return $this->mailchimp_lib->alta_en_lista_json('a8a4da30d9', $email, $nombre);
+    }
+
 }
