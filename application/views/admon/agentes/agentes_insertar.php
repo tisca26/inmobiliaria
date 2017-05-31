@@ -45,7 +45,6 @@
                         <h1>
                             Agentes disponible
                         </h1>
-                        <small>Seleccine el agente para ver sus detalles y editarlos</small>
                     </div>
                     <br>
                 </div>
@@ -57,98 +56,148 @@
                     </h5>
                 </div>
                 <div class="ibox-content">
-                    <form method="get" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Nombre completo*</label>
-                            <div class="col-sm-4">
-                                <input type="text" placeholder="Nombre(s)" name="nombre" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Apellido Paterno" name="apellido_paterno" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Apellido Materno" name="apellido_materno" class="form-control">
-                            </div>
+                    <?php echo get_bootstrap_alert(); ?>
+                    <?php echo validation_errors("<div class='alert alert-danger'>", "</div>"); ?>
+                    <?php echo form_open_multipart('admon/agentes/insercion', array('id' => 'postFrm', 'class' => 'form-horizontal')); ?>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre completo*</label>
+                        <div class="col-sm-4">
+                            <input type="text" placeholder="Nombre(s)"
+                                   value="<?php echo set_value('nombre'); ?>" name="nombre"
+                                   class="form-control"
+                                   minlength="3" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                   data-msg-required="Campo requerido" required>
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Móvil*</label>
-                            <div class="col-sm-10">
-                                <input type="text" placeholder="Teléfono Móvil" name="tel_movil" class="form-control">
-                            </div>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Apellido Paterno"
+                                   value="<?php echo set_value('apellido_paterno'); ?>"
+                                   name="apellido_paterno"
+                                   class="form-control"
+                                   minlength="3" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                   data-msg-required="Campo requerido" required>
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Fijo</label>
-                            <div class="col-sm-8">
-                                <input type="text" placeholder="Teléfono Fijo" name="tel_fijo" class="form-control">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="text" placeholder="Ext" name="tel_fijo_ext" class="form-control">
-                            </div>
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="Apellido Materno"
+                                   value="<?php echo set_value('apellido_materno'); ?>"
+                                   name="apellido_materno"
+                                   class="form-control"
+                                   minlength="3" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                   data-msg-required="Campo requerido" required>
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Email*</label>
-                            <div class="col-sm-10">
-                                <input type="text" placeholder="Email" name="email" class="form-control">
-                            </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Móvil*</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="Teléfono Móvil"
+                                   value="<?php echo set_value('tel_movil'); ?>"
+                                   name="tel_movil" class="form-control"
+                                   minlength="10" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                   data-msg-required="Campo requerido" required>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Redes Sociales</label>
-                            <div class="col-sm-4">
-                                <input type="text" placeholder="Link de Facebook" name="facebook_profile" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Link de Twitter" name="twitter_profile" class="form-control">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" placeholder="Link de LinkedIn" name="linkedin_profile" class="form-control">
-                            </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Fijo</label>
+                        <div class="col-sm-8">
+                            <input type="text" placeholder="Teléfono Fijo"
+                                   value="<?php echo set_value('tel_fijo'); ?>"
+                                   name="tel_fijo" class="form-control"
+                                   minlength="8" data-msg-minlength="Se requieren al menos {0} caracteres">
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Imagen de perfil</label>
-                            <div class="col-sm-10">
-                                <input type="file" placeholder="Teléfono Móvil" name="img_profile" class="form-control" accept="image/*">
-                            </div>
+                        <div class="col-sm-2">
+                            <input type="text" placeholder="Ext"
+                                   value="<?php echo set_value('tel_fijo_ext'); ?>"
+                                   name="tel_fijo_ext" class="form-control">
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Descripción Español*</label>
-                            <div class="col-sm-10">
-                                <textarea placeholder="Descripción del agente en español" name="descripcion_es" class="form-control"></textarea>
-                            </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email*</label>
+                        <div class="col-sm-10">
+                            <input type="email" placeholder="Email"
+                                   value="<?php echo set_value('email'); ?>"
+                                   name="email"
+                                   class="form-control" data-msg-email="Debe ser un email válido"
+                                   data-msg-required="Campo requerido" required>
                         </div>
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Descripción Ingles*</label>
-                            <div class="col-sm-10">
-                                <textarea placeholder="Descripción del agente en ingles" name="descripcion_en" class="form-control"></textarea>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Redes Sociales</label>
+                        <div class="col-sm-4">
+                            <input type="url" placeholder="Link de Facebook"
+                                   value="<?php echo set_value('facebook_profile'); ?>"
+                                   name="facebook_profile" class="form-control"
+                                   minlength="10" data-msg-minlength="Se requieren al menos {0} caracteres">
                         </div>
+                        <div class="col-sm-3">
+                            <input type="url" placeholder="Link de Twitter"
+                                   value="<?php echo set_value('twitter_profile'); ?>"
+                                   name="twitter_profile" class="form-control"
+                                   minlength="10" data-msg-minlength="Se requieren al menos {0} caracteres">
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="url" placeholder="Link de LinkedIn"
+                                   value="<?php echo set_value('linkedin_profile'); ?>"
+                                   name="linkedin_profile" class="form-control"
+                                   minlength="10" data-msg-minlength="Se requieren al menos {0} caracteres">
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Imagen de perfil</label>
+                        <div class="col-sm-10">
+                            <input type="file" name="img_profile" class="form-control"
+                                   accept="image/*">
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Descripción Español*</label>
+                        <div class="col-sm-10">
+                                <textarea rows="3" cols="30" placeholder="Descripción del agente en español"
+                                          name="descripcion_es" class="form-control"
+                                          minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                          data-msg-required="Campo requerido" required>
+                                    <?php echo set_value('descripcion_es'); ?>
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Descripción Ingles*</label>
+                        <div class="col-sm-10">
+                                <textarea rows="3" cols="30" placeholder="Descripción del agente en ingles"
+                                          name="descripcion_en" class="form-control"
+                                          minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                          data-msg-required="Campo requerido" required>
+                                    <?php echo set_value('descripcion_en'); ?>
+                                </textarea>
+                        </div>
+                    </div>
 
-                        <div class="hr-line-dashed"></div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">¿Habilitado? </label>
-                            <div class="col-sm-10">
-                                <div>
-                                    <label>
-                                        <input type="checkbox" name="estatus" value="1" checked>
-                                        Habilitar para que aparezca en el sitio web
-                                    </label>
-                                </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">¿Habilitado? </label>
+                        <div class="col-sm-10">
+                            <div>
+                                <label>
+                                    <input type="checkbox" name="estatus"
+                                           value="1" <?php echo set_checkbox('estatus', '1'); ?>>
+                                    Habilitar para que aparezca en el sitio web
+                                </label>
                             </div>
                         </div>
-                        <div class="hr-line-dashed"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
 
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-white" type="submit">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save changes</button>
-                            </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <a class="btn btn-white" href="<?php echo base_url('admon/agentes'); ?>">Cancelar</a>
+                            <button class="btn btn-primary" type="submit">Guardar</button>
                         </div>
-                    </form>
+                    </div>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
@@ -166,10 +215,15 @@
 <script src="<?php echo cdn_assets(); ?>/admon/js/inspinia.js"></script>
 <script src="<?php echo cdn_assets(); ?>/admon/js/plugins/pace/pace.min.js"></script>
 
+<script src="<?php echo cdn_assets(); ?>/admon/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- Jquery Validate -->
+<script src="<?php echo cdn_assets(); ?>/admon/js/plugins/validate/jquery.validate.min.js"></script>
+
 <script>
 
     $(document).ready(function () {
-
+        $("#postFrm").validate();
     });
 
 </script>

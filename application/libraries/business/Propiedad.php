@@ -111,6 +111,13 @@ class Propiedad
         return $propiedades;
     }
 
+    public function propiedades_todas_habilitadas($limit = 10, $offset = 0)
+    {
+        $propiedades = $this->CI->propiedades_model->propiedades_todas_habilitadas($limit, $offset);
+        $propiedades = $this->asigna_img_a_propiedades($propiedades);
+        return $propiedades;
+    }
+
     public function propiedades_filtros($limit = 10, $offset = 0, $busqueda_dto = null)
     {
         if (is_null($busqueda_dto)) {

@@ -41,7 +41,7 @@ class Propiedades_model extends CI_Model
     public function propiedades_destacadas()
     {
         $res = array();
-        $q = $this->db->where('destacada', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('destacada', 1)->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -51,7 +51,7 @@ class Propiedades_model extends CI_Model
     public function propiedades_pagina_inicio()
     {
         $res = array();
-        $q = $this->db->where('pagina_inicio', 1)->get('v_propiedades_completo');
+        $q = $this->db->where('estatus', 1)->where('pagina_inicio', 1)->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -61,7 +61,7 @@ class Propiedades_model extends CI_Model
     public function propiedades_oferta_especial()
     {
         $res = array();
-        $q = $this->db->where('oferta_especial', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('oferta_especial', 1)->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -71,7 +71,7 @@ class Propiedades_model extends CI_Model
     public function cuantas_destacadas()
     {
         $res = 0;
-        $q = $this->db->where('destacada', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('destacada', 1)->get('propiedades');
         $res = $q->num_rows();
         return $res;
     }
@@ -79,7 +79,7 @@ class Propiedades_model extends CI_Model
     public function cuantas_pagina_inicio()
     {
         $res = 0;
-        $q = $this->db->where('pagina_inicio', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('pagina_inicio', 1)->get('propiedades');
         $res = $q->num_rows();
         return $res;
     }
@@ -87,7 +87,7 @@ class Propiedades_model extends CI_Model
     public function cuantas_oferta_especial()
     {
         $res = 0;
-        $q = $this->db->where('oferta_especial', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('oferta_especial', 1)->get('propiedades');
         $res = $q->num_rows();
         return $res;
     }
@@ -110,7 +110,7 @@ class Propiedades_model extends CI_Model
         if ($precio_max != ''){
             $this->db->where('precio_publico <=', $precio_max);
         }
-        $q = $this->db->get('v_propiedades_completo');
+        $q = $this->db->where('estatus', 1)->get('v_propiedades_completo');
         $res = $q->num_rows();
         return $res;
     }
@@ -118,7 +118,20 @@ class Propiedades_model extends CI_Model
     public function propiedades_todas($limit = 10, $offset = 0)
     {
         $res = array();
-        $q = $this->db->limit($limit, $offset)->order_by('propiedades_id DESC')->get('v_propiedades_completo');
+        if ($limit > 0){
+            $this->db->limit($limit, $offset);
+        }
+        $q = $this->db->order_by('propiedades_id DESC')->get('v_propiedades_completo');
+        if ($q->num_rows() > 0) {
+            $res = $q->result();
+        }
+        return $res;
+    }
+
+    public function propiedades_todas_habilitadas($limit = 10, $offset = 0)
+    {
+        $res = array();
+        $q = $this->db->where('estatus', 1)->limit($limit, $offset)->order_by('propiedades_id DESC')->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -128,7 +141,7 @@ class Propiedades_model extends CI_Model
     public function ubicaciones_distintas()
     {
         $res = array();
-        $q = $this->db->group_by('estado')->order_by('estado ASC')->get('propiedades');
+        $q = $this->db->where('estatus', 1)->group_by('estado')->order_by('estado ASC')->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -139,7 +152,7 @@ class Propiedades_model extends CI_Model
     {
         $res = null;
         $this->db->select_max('cuartos');
-        $q = $this->db->get('propiedades');
+        $q = $this->db->where('estatus', 1)->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->row();
         }
@@ -150,7 +163,7 @@ class Propiedades_model extends CI_Model
     {
         $res = null;
         $this->db->select_max('precio_publico');
-        $q = $this->db->get('propiedades');
+        $q = $this->db->where('estatus', 1)->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->row();
         }
@@ -175,7 +188,7 @@ class Propiedades_model extends CI_Model
         if ($precio_max != ''){
             $this->db->where('precio_publico <=', $precio_max);
         }
-        $q = $this->db->limit($limit, $offset)->order_by('precio_publico DESC')->get('v_propiedades_completo');
+        $q = $this->db->where('estatus', 1)->limit($limit, $offset)->order_by('precio_publico DESC')->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }

@@ -21,15 +21,21 @@ class Agentes extends CI_Controller
     public function inhabilitar_json()
     {
         header('Content-type: application/json');
-        $agentes_id = $this->input->post('agentes_id');
-        echo json_encode(array('status' => 'OK', 'msg' => 'Todo bien'));
+        $agente['agentes_id'] = $this->input->post('agentes_id');
+        $agente['estatus'] = 0;
+        $this->load->library('business/Agente');
+        $this->agente->editar_agente($agente);
+        echo json_encode(array('status' => 'OK', 'msg' => 'Todo bien ' . $agente['agentes_id']));
     }
 
     public function habilitar_json()
     {
         header('Content-type: application/json');
-        $agentes_id = $this->input->post('agentes_id');
-        echo json_encode(array('status' => 'OK', 'msg' => 'Todo bien'));
+        $agente['agentes_id'] = $this->input->post('agentes_id');
+        $agente['estatus'] = 1;
+        $this->load->library('business/Agente');
+        $this->agente->editar_agente($agente);
+        echo json_encode(array('status' => 'OK', 'msg' => 'Todo bien ' . $agente['agentes_id']));
     }
 
     public function editar($agentes_id = 0)
@@ -83,6 +89,55 @@ class Agentes extends CI_Controller
         }
     }
 
+    public function insertar()
+    {
+        $this->load->view('admon/agentes/agentes_insertar');
+    }
+
+    public function insercion()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nombre', 'Nombre', 'required|min_length[3]');
+        $this->form_validation->set_rules('apellido_paterno', 'Apellido Paterno', 'required|min_length[3]');
+        $this->form_validation->set_rules('apellido_materno', 'Apellido Materno', 'required|min_length[3]');
+        $this->form_validation->set_rules('tel_movil', 'Móvil', 'required|min_length[10]');
+        $this->form_validation->set_rules('tel_fijo', 'Fijo', 'min_length[8]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('descripcion_es', 'Descripción ES', 'required|trim');
+        $this->form_validation->set_rules('descripcion_en', 'Descripción EN', 'required|trim');
+        if ($this->form_validation->run() == FALSE) {
+            $this->insertar();
+        } else {
+            $this->load->library('business/Agente');
+            $agente_dto = $this->input->post();
+            $agente_dto['estatus'] = isset($agente_dto['estatus']) ? (bool)$agente_dto['estatus'] : '0';
+            unset($agente_dto['img_profile']);
+            if ($this->agente->insertar_agente($agente_dto)) {
+                $agentes_id = $this->agente->ultimo_id();
+                if ($_FILES AND $_FILES['img_profile']['name']) {
+                    $this->load->library('upload', $this->_upload_config($agentes_id));
+                    if (!$this->upload->do_upload('img_profile')) {
+                        $error = array('error' => $this->upload->display_errors());
+                        set_bootstrap_alert('Error al guardar la imagen el agente, pero el agente si se guardó:', BOOTSTRAP_ALERT_DANGER);
+                        set_bootstrap_alert($error, BOOTSTRAP_ALERT_DANGER);
+                        redirect('admon/agentes/editar/' . $agentes_id);
+                    }
+                    $agente_update['agentes_id'] = $agentes_id;
+                    $agente_update['img_profile'] = base_url("assets/img/agentes/" . $agentes_id . "/" . $this->upload->data('file_name'));
+                    if (!$this->agente->editar_agente($agente_update)) {
+                        set_bootstrap_alert('Error al guardar la imagen el agente, pero el agente si se guardó', BOOTSTRAP_ALERT_DANGER);
+                        redirect('admon/agentes/editar/' . $agentes_id);
+                    }
+                }
+                set_bootstrap_alert('Se guardó el agente con éxito', BOOTSTRAP_ALERT_SUCCESS);
+                redirect('admon/agentes');
+            } else {
+                set_bootstrap_alert('Error al guardar al agente', BOOTSTRAP_ALERT_DANGER);
+                $this->insertar();
+            }
+        }
+    }
+
     private function _upload_config($nombre = '0')
     {
         if (!file_exists(FCPATH . "assets/img/agentes/$nombre")) {
@@ -97,4 +152,5 @@ class Agentes extends CI_Controller
         $config['max_height'] = 768;
         return $config;
     }
+
 }

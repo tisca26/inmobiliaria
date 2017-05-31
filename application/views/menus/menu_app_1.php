@@ -15,10 +15,13 @@
                 </div>
             </li>
             <li>
-                <a href="<?php echo base_url('admon/agentes'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Agentes</span></a>
+                <a href="<?php echo base_url('admon/usuarios'); ?>"><i class="fa fa-address-card"></i> <span class="nav-label">Usuarios</span></a>
             </li>
             <li>
-                <a href="<?php echo base_url('admon/propiedades'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Propiedades</span> </a>
+                <a href="<?php echo base_url('admon/agentes'); ?>"><i class="fa fa-address-book"></i> <span class="nav-label">Agentes</span></a>
+            </li>
+            <li>
+                <a href="<?php echo base_url('admon/propiedades'); ?>"><i class="fa fa-home"></i> <span class="nav-label">Propiedades</span> </a>
             </li>
         </ul>
 

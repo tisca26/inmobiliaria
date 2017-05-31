@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Agentes | <?php echo EMPRESA_NOMBRE; ?></title>
+    <title>Usuarios | <?php echo EMPRESA_NOMBRE; ?></title>
 
     <link href="<?php echo cdn_assets(); ?>/admon/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo cdn_assets(); ?>/admon/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <link href="<?php echo cdn_assets(); ?>/admon/css/style.css" rel="stylesheet">
 
     <style>
-        .agente_inhabilitado {
+        .usuario_inhabilitado {
             background-color: rgb(237, 86, 102) !important;
             color: #f1f1f1 !important;
         }
@@ -52,43 +52,42 @@
                 <div class="col-lg-12">
                     <div class="text-center m-t-lg">
                         <h1>
-                            Agentes disponible
+                            Usuarios registrados
                         </h1>
-                        <span>Seleccine el agente para ver sus detalles y editarlos o <a class="btn btn-info btn-xs"
-                                                                                         href="<?php echo base_url('admon/agentes/insertar') ?>">Genere uno nuevo aquí</a></span>
+                        <span>Seleccine el usuario para ver sus detalles y editarlos o 
+                            <a class="btn btn-info btn-xs" href="<?php echo base_url('admon/usuarios/insertar') ?>">Genere uno nuevo aquí</a>
+                        </span>
                     </div>
                     <br>
                 </div>
             </div>
             <div class="row">
                 <?php echo get_bootstrap_alert(); ?>
-                <?php foreach ($agentes as $agente): ?>
+                <?php foreach ($usuarios as $usuario): ?>
                     <div class="col-lg-3">
                         <div class="contact-box center-version">
-                            <a href="<?php echo base_url('admon/agentes/editar/' . $agente->agentes_id) ?>"
-                               class="cuadro_agente <?php echo ($agente->estatus == '1') ? '' : 'agente_inhabilitado' ?>">
+                            <a href="<?php echo base_url('admon/usuarios/editar/' . $usuario->usuarios_id) ?>"
+                               class="cuadro_usuario <?php echo ($usuario->estatus == '1') ? '' : 'usuario_inhabilitado' ?>">
                                 <img alt="<?php echo EMPRESA_NOMBRE; ?>" class="img-circle"
-                                     src="<?php echo $agente->img_profile; ?>">
+                                     src="<?php echo cdn_assets(). '/img/agentes/logo_base.png'; ?>">
 
                                 <h3 class="m-b-xs">
-                                    <strong><?php echo "$agente->nombre $agente->apellido_paterno $agente->apellido_materno"; ?></strong>
+                                    <strong><?php echo "$usuario->nombre $usuario->apellidos"; ?></strong>
                                 </h3>
 
-                                <div class="font-bold">Agente de Ventas</div>
+                                <div class="font-bold">Usuario de Sistema</div>
                                 <address class="m-t-md">
                                     <strong><?php EMPRESA_NOMBRE; ?></strong><br>
-                                    <?php echo $agente->email; ?><br>
-                                    <abbr title="Phone">Móvil:</abbr> <?php echo "$agente->tel_movil"; ?><br>
-                                    <abbr title="Phone">Fijo:</abbr> <?php echo "$agente->tel_fijo" . (isset($agente->tel_fijo_ext) ? ' - ' . $agente->tel_fijo_ext : ''); ?>
+                                    <?php echo $usuario->email; ?><br>
                                 </address>
 
                             </a>
                             <div class="contact-box-footer">
                                 <div class="m-t-xs btn-group text-center">
-                                    <button class="btn btn-danger btn-sm <?php echo ($agente->estatus == '1') ? 'inhabilitar' : 'habilitar' ?>"
-                                            type="button" data-id="<?php echo $agente->agentes_id; ?>"><i
+                                    <button class="btn btn-danger btn-sm <?php echo ($usuario->estatus == '1') ? 'inhabilitar' : 'habilitar' ?>"
+                                            type="button" data-id="<?php echo $usuario->usuarios_id; ?>"><i
                                                 class="fa fa-warning"></i>
-                                        <span class="bold"><?php echo ($agente->estatus == '1') ? 'Inhabilitar' : 'Habilitar' ?></span>
+                                        <span class="bold"><?php echo ($usuario->estatus == '1') ? 'Inhabilitar' : 'Habilitar' ?></span>
                                     </button>
                                 </div>
                             </div>
@@ -121,7 +120,7 @@
             var btn = $(this);
             swal({
                     title: "¿Desea borrarlo?",
-                    text: "El agente quedará inhabilitado",
+                    text: "El usuario quedará inhabilitado",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
@@ -135,14 +134,14 @@
                         $.ajax({
                             method: "POST",
                             data: {
-                                'agentes_id': btn.attr('data-id')
+                                'usuarios_id': btn.attr('data-id')
                             },
-                            url: '<?php echo base_url('admon/agentes/inhabilitar_json')?>',
+                            url: '<?php echo base_url('admon/usuarios/inhabilitar_json')?>',
                             dataType: 'json'
                         }).done(function (data) {
                             var obj = JSON.stringify(data);
-                            swal("¡Inhabilitado!", "El agente ha sido habilitado.", "success");
-                            btn.closest('div.contact-box').find('a.cuadro_agente').addClass("agente_inhabilitado");
+                            swal("¡Inhabilitado!", "El usuario ha sido habilitado.", "success");
+                            btn.closest('div.contact-box').find('a.cuadro_usuario').addClass("usuario_inhabilitado");
                             btn.find('span.bold').html('Habilitar');
                             btn.removeClass('inhabilitar');
                             btn.addClass('habilitar');
@@ -160,7 +159,7 @@
             var btn = $(this);
             swal({
                     title: "¿Desea habilitarlo?",
-                    text: "El agente quedará habilitado",
+                    text: "El usuario quedará habilitado",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
@@ -174,14 +173,14 @@
                         $.ajax({
                             method: "POST",
                             data: {
-                                'agentes_id': btn.attr('data-id')
+                                'usuarios_id': btn.attr('data-id')
                             },
-                            url: '<?php echo base_url('admon/agentes/habilitar_json')?>',
+                            url: '<?php echo base_url('admon/usuarios/habilitar_json')?>',
                             dataType: 'json'
                         }).done(function (data) {
                             var obj = JSON.stringify(data);
-                            swal("¡Inhabilitado!", "El agente ha sido inhabilitado.", "success");
-                            btn.closest('div.contact-box').find('a.cuadro_agente').removeClass("agente_inhabilitado");
+                            swal("¡Inhabilitado!", "El usuario ha sido inhabilitado.", "success");
+                            btn.closest('div.contact-box').find('a.cuadro_usuario').removeClass("usuario_inhabilitado");
                             btn.find('span.bold').html('Inhabilitar');
                             btn.addClass('inhabilitar');
                             btn.removeClass('habilitar');

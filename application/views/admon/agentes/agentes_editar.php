@@ -45,7 +45,6 @@
                         <h1>
                             Agentes disponible
                         </h1>
-                        <small>Seleccine el agente para ver sus detalles y editarlos</small>
                     </div>
                     <br>
                 </div>
@@ -58,7 +57,7 @@
                 </div>
                 <div class="ibox-content">
                     <?php echo get_bootstrap_alert(); ?>
-                    <?php echo validation_errors(); ?>
+                    <?php echo validation_errors("<div class='alert alert-danger'>", "</div>"); ?>
                     <?php echo form_open_multipart('admon/agentes/edicion', array('id' => 'postFrm', 'class' => 'form-horizontal')); ?>
                     <input type="hidden" name="agentes_id" value="<?php echo $agente->agentes_id; ?>">
                     <div class="form-group">
@@ -149,7 +148,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Imagen de perfil</label>
                         <div class="col-sm-10">
-                            <input type="file" placeholder="Teléfono Móvil" name="img_profile" class="form-control"
+                            <input type="file" name="img_profile" class="form-control"
                                    accept="image/*">
                         </div>
                     </div>

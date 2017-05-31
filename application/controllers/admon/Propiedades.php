@@ -11,7 +11,10 @@ class Propiedades extends CI_Controller
 
     public function index()
     {
-        $this->load->view('admon/propiedades/propiedades_index');
+        $this->load->library('business/Propiedad');
+        $propiedades = $this->propiedad->propiedades_todas(0);
+        $data['propiedades'] = $propiedades;
+        $this->load->view('admon/propiedades/propiedades_index', $data);
     }
 
 }

@@ -65,6 +65,7 @@ die('This file is used for development purposes only.');
  * @property Correo              $correo                              Correo class
  * @property Mailchimp_lib       $mailchimp_lib                       MailChimp lib
  * @property Auth_lib            $auth_lib                            Auth class
+ * @property Usuario             $usuario                             Usuarios class
  */
 class CI_Controller {
 
@@ -121,6 +122,7 @@ class CI_Controller {
  * @property Propiedades_model   $propiedades_model                   Model propiedades
  * @property Agentes_model       $agentes_model                       agentes_model
  * @property Tipo_propiedad_model $tipo_propiedad_model               Tipo propiedad Class
+ * @property Usuarios_model       $usuarios_model                     Usuarios model
  */
 class CI_Model {
 

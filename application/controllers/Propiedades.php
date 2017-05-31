@@ -40,7 +40,7 @@ class Propiedades extends CI_Controller
         $this->load->library('business/Propiedad');
         $prop_a_mostrar = 6;
         $cuantas_propiedades = $this->propiedad->cuantas_propiedades();
-        $propiedades = $this->propiedad->propiedades_todas($prop_a_mostrar, 0);
+        $propiedades = $this->propiedad->propiedades_todas_habilitadas($prop_a_mostrar, 0);
 
         // PAGINACION INICIO
         $links_paginacion = $this->_prepara_paginacion(base_url_lang_slash() . 'propiedades/pag/', $cuantas_propiedades, $prop_a_mostrar);
