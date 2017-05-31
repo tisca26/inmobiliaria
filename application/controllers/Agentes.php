@@ -5,7 +5,7 @@ class Agentes extends CI_Controller
     public function index()
     {
         $this->load->library('business/Agente');
-        $agentes = $this->agente->agente_todos();
+        $agentes = $this->agente->agentes_todos_habiles();
 
         $data['agentes'] = $agentes;
 

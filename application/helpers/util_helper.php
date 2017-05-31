@@ -55,4 +55,15 @@ if (!function_exists('pretty_id')) {
         return str_pad($id, 6, "0", STR_PAD_LEFT);
     }
 }
+
+if (!function_exists('valid_id')) {
+    function valid_id($id = '0')
+    {
+        $number = false;
+        if (is_string($id) && $id > 0){
+            $number = filter_var($id, FILTER_VALIDATE_INT);
+        }
+        return ($number !== FALSE);
+    }
+}
 ?>

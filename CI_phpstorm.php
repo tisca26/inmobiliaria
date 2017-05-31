@@ -64,6 +64,7 @@ die('This file is used for development purposes only.');
  * @property Lector_archivos     $lector_archivos                     Lector Class
  * @property Correo              $correo                              Correo class
  * @property Mailchimp_lib       $mailchimp_lib                       MailChimp lib
+ * @property Auth_lib            $auth_lib                            Auth class
  */
 class CI_Controller {
 

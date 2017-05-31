@@ -10,7 +10,7 @@ class Inicio extends CI_Controller
         $propiedades_pagina_inicio = $this->propiedad->propiedades_pagina_inicio();
         $propiedades_oferta_especial = $this->propiedad->propiedades_oferta_especial();
         $cuantas_destacadas = $this->propiedad->cuantas_destacadas();
-        $agentes = $this->agente->agente_todos();
+        $agentes = $this->agente->agentes_todos_habiles();
 
         $data['propiedades_destacadas'] = $propiedades_destacadas;
         $data['propiedades_pagina_inicio'] = $propiedades_pagina_inicio;

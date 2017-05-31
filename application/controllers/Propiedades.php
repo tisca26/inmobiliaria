@@ -74,7 +74,7 @@ class Propiedades extends CI_Controller
 
     public function ver($propiedad_id = '')
     {
-        if (!is_numeric($propiedad_id)) {
+        if (!valid_id($propiedad_id)){
             redirect('propiedades');
         }
         $this->load->library('business/Propiedad');
@@ -84,7 +84,7 @@ class Propiedades extends CI_Controller
         $data['propiedad_imgs'] = $propiedad_imgs;
 
         $this->load->library('business/Agente');
-        $agentes = $this->agente->agente_todos();
+        $agentes = $this->agente->agentes_todos_habiles();
         $data['agentes'] = $agentes;
 
         $this->cargar_idioma->carga_lang('propiedades/propiedades_ver');
