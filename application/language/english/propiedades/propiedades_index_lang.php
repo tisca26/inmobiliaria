@@ -8,6 +8,11 @@ $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 $lang['breadcrumb_inicio'] = 'Home';
 $lang['breadcrumb_pagina'] = 'Properties';
 
+$lang['Casa'] = 'House';
+$lang['Departamento'] = 'Department';
+$lang['Pent - House'] = 'Pent - House';
+$lang['Edificio'] = 'Building';
+
 $lang['listado_para_venta_renta'] = 'List for Sale or Rent';
 $lang['listado_para'] = 'List for';
 $lang['venta'] = 'Sale';

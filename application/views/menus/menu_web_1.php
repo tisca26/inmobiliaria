@@ -34,7 +34,7 @@
             <ul class="dropdown-menu custom-fullwidth-dropdown-menu">
                 <li>
                     <div class="dropdown-mega-content">
-                        <form id="propertiesFormHeader" action="<?php echo base_url() . 'propiedades/buscar'?>" method="POST">
+                        <form id="propertiesFormHeader" action="<?php echo base_url_lang_slash() . 'propiedades/buscar'?>" method="POST">
                             <div class="container p-none">
                                 <div class="row">
                                     <?php $busqueda_dto = obtener_buscador_dto(); ?>
@@ -45,7 +45,7 @@
                                                     data-msg-required="This field is required." id="propertiesPropertyType">
                                                 <option value=""><?php echo trans_line('buscador_tipo_propiedad'); ?></option>
                                                 <?php foreach ($busqueda_dto->tipos_propiedades as $busqueda_tipos_propiedades): ?>
-                                                    <option value="<?php echo $busqueda_tipos_propiedades->tipo_propiedad_id; ?>"><?php echo $busqueda_tipos_propiedades->nombre; ?></option>
+                                                    <option value="<?php echo $busqueda_tipos_propiedades->tipo_propiedad_id; ?>"><?php echo trans_line($busqueda_tipos_propiedades->nombre); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

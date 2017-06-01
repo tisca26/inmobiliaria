@@ -14,3 +14,8 @@ $lang['buscador_estado'] = 'Location';
 $lang['buscador_cuartos'] = 'Beds';
 $lang['buscador_precio_min'] = 'Min price';
 $lang['buscador_precio_max'] = 'Max price';
+
+$lang['Casa'] = 'House';
+$lang['Departamento'] = 'Department';
+$lang['Pent - House'] = 'Pent - House';
+$lang['Edificio'] = 'Building';

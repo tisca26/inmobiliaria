@@ -126,7 +126,7 @@
                 </div>
                 <div class="row mt-lg">
                     <div class="col-md-12">
-                        <form id="propertiesForm" action="<?php echo base_url() . 'propiedades/buscar'?>" method="POST">
+                        <form id="propertiesForm" action="<?php echo base_url_lang_slash() . 'propiedades/buscar'?>" method="POST">
                             <div class="row">
                                 <?php $busqueda_dto = obtener_buscador_dto(); ?>
                                 <div class="col-md-2">
@@ -136,7 +136,7 @@
                                                 data-msg-required="This field is required." id="propertiesPropertyType">
                                             <option value=""><?php echo trans_line('buscador_tipo_propiedad'); ?></option>
                                             <?php foreach ($busqueda_dto->tipos_propiedades as $busqueda_tipos_propiedades): ?>
-                                                <option value="<?php echo $busqueda_tipos_propiedades->tipo_propiedad_id; ?>" <?php echo set_select('propertiesPropertyType', $busqueda_tipos_propiedades->tipo_propiedad_id); ?>><?php echo $busqueda_tipos_propiedades->nombre; ?></option>
+                                                <option value="<?php echo $busqueda_tipos_propiedades->tipo_propiedad_id; ?>" <?php echo set_select('propertiesPropertyType', $busqueda_tipos_propiedades->tipo_propiedad_id); ?>><?php echo trans_line($busqueda_tipos_propiedades->nombre); ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
