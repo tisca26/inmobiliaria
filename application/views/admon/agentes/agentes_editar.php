@@ -156,24 +156,20 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descripción Español*</label>
                         <div class="col-sm-10">
-                                <textarea rows="3" cols="30" placeholder="Descripción del agente en español"
-                                          name="descripcion_es" class="form-control"
-                                          minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
-                                          data-msg-required="Campo requerido" required>
-                                    <?php echo set_value('descripcion_es', $agente->descripcion_es); ?>
-                                </textarea>
+                            <textarea rows="3" cols="30" placeholder="Descripción del agente en español"
+                                      name="descripcion_es" class="form-control"
+                                      minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                      data-msg-required="Campo requerido" required><?php echo set_value('descripcion_es', $agente->descripcion_es); ?></textarea>
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Descripción Ingles*</label>
                         <div class="col-sm-10">
-                                <textarea rows="3" cols="30" placeholder="Descripción del agente en ingles"
-                                          name="descripcion_en" class="form-control"
-                                          minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
-                                          data-msg-required="Campo requerido" required>
-                                    <?php echo set_value('descripcion_en', $agente->descripcion_en); ?>
-                                </textarea>
+                            <textarea rows="3" cols="30" placeholder="Descripción del agente en ingles"
+                                      name="descripcion_en" class="form-control"
+                                      minlength="5" data-msg-minlength="Se requieren al menos {0} caracteres"
+                                      data-msg-required="Campo requerido" required><?php echo set_value('descripcion_en', $agente->descripcion_en); ?></textarea>
                         </div>
                     </div>
 

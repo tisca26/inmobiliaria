@@ -23,4 +23,9 @@ class Estatus_propiedades_model extends CI_Model
     {
         return $this->db->insert('estatus_propiedades', $data);
     }
+
+    public function borrar_estatus_por_propiedad($propiedad_id = 0)
+    {
+        return $this->db->delete('estatus_propiedades', array('propiedades_id' => $propiedad_id));
+    }
 }

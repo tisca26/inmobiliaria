@@ -1,0 +1,3 @@
+'username' => 'okancapi_okanusr',
+	'password' => 'Okan12345!',
+	'database' => 'okancapi_okan',

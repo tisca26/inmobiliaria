@@ -46,7 +46,12 @@ class Propiedad
     {
         foreach ($propiedades as $prop) {
             $imgs = $this->imagenes_por_propiedad_id($prop->propiedades_id);
-            $prop->img = $imgs[0];
+            if (count($imgs) > 0){
+                $prop->img = $imgs[0];
+            }else{
+                $prop->img = base_url_slash() . AGENTE_IMG_BASE;
+            }
+
         }
         return $propiedades;
     }
@@ -168,7 +173,7 @@ class Propiedad
             $insrt['no_interior'] = $fila['R'];
             $insrt['colonia'] = $fila['S'];
             $insrt['municipio'] = $fila['O'];
-            $insrt['estado'] = $fila['T'];
+            $insrt['estado'] = strtoupper($fila['T']);
             $insrt['pais'] = $fila['U'];
             $insrt['codigo_postal'] = $fila['N'];
             if ($this->CI->propiedades_model->insertar_propiedad($insrt)) {
@@ -182,6 +187,50 @@ class Propiedad
             }
         }
         return 'Todas las propiedades insertadas';
+    }
+
+    public function inserta_propiedad_completo($propiedad = array(), $estatus_propiedad_id = 0){
+        $this->CI->load->model('estatus_propiedades_model');
+        if (!(bool)$propiedad['estatus']){
+            $propiedad['destacada'] = 0;
+            $propiedad['pagina_inicio'] = 0;
+            $propiedad['oferta_especial'] = 0;
+        }
+
+        $res1 = $this->CI->propiedades_model->insertar_propiedad($propiedad);
+        if ($res1){
+            $propiedades_id = $this->CI->propiedades_model->ultimo_id();
+            $res2 = $this->CI->estatus_propiedades_model->borrar_estatus_por_propiedad($propiedades_id);
+            if ($res2 != false){
+                $ep_ins['propiedades_id'] = $propiedades_id;
+                $ep_ins['estatus_propiedad_id'] = $estatus_propiedad_id;
+                if ($this->CI->estatus_propiedades_model->insertar_estatus($ep_ins)){
+                    return $propiedades_id;
+                }
+            }
+        }
+        return false;
+    }
+
+    public function edita_propiedad_completo($propiedad = array(), $estatus_propiedad_id = 0){
+        $this->CI->load->model('estatus_propiedades_model');
+        if (!(bool)$propiedad['estatus']){
+            $propiedad['destacada'] = 0;
+            $propiedad['pagina_inicio'] = 0;
+            $propiedad['oferta_especial'] = 0;
+        }
+        $res1 = $this->CI->propiedades_model->editar_propiedad($propiedad);
+        if ($res1){
+            $res2 = $this->CI->estatus_propiedades_model->borrar_estatus_por_propiedad($propiedad['propiedades_id']);
+            if ($res2 != false){
+                $ep_ins['propiedades_id'] = $propiedad['propiedades_id'];
+                $ep_ins['estatus_propiedad_id'] = $estatus_propiedad_id;
+                if ($this->CI->estatus_propiedades_model->insertar_estatus($ep_ins)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

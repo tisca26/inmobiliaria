@@ -41,7 +41,7 @@ class Propiedades_model extends CI_Model
     public function propiedades_destacadas()
     {
         $res = array();
-        $q = $this->db->where('estatus', 1)->where('destacada', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('destacada', 1)->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -61,7 +61,7 @@ class Propiedades_model extends CI_Model
     public function propiedades_oferta_especial()
     {
         $res = array();
-        $q = $this->db->where('estatus', 1)->where('oferta_especial', 1)->get('propiedades');
+        $q = $this->db->where('estatus', 1)->where('oferta_especial', 1)->get('v_propiedades_completo');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
@@ -199,4 +199,8 @@ class Propiedades_model extends CI_Model
         return $this->db->insert('propiedades', $data);
     }
 
+    public function editar_propiedad($data = array())
+    {
+        return $this->db->update('propiedades', $data, array('propiedades_id' => $data['propiedades_id']));
+    }
 }

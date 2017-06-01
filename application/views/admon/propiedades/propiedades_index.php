@@ -47,6 +47,86 @@
                         <h1>
                             Propiedades disponibles
                         </h1>
+                        <small>Listado de todas las propiedades, si desea agregar una nueva <a class="btn btn-success btn-xs" href="<?php echo base_url('admon/propiedades/insertar')?>">de click aquí</a></small>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <?php echo get_bootstrap_alert(); ?>
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Propiedades Destacadas </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th># ID</th>
+                                    <th>Tipo</th>
+                                    <th>Estatus Prop</th>
+                                    <th>Municipio</th>
+                                    <th>Estado</th>
+                                    <th>Precio Público</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($destacadas as $destacada): ?>
+                                    <tr>
+                                        <td>
+                                            <a href="<?php echo base_url('admon/propiedades/editar/' . $destacada->propiedades_id); ?>">
+                                                <?php echo $destacada->propiedades_id; ?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo $destacada->tipo_propiedad; ?></td>
+                                        <td><?php echo $destacada->estatus_propiedad; ?></td>
+                                        <td><?php echo $destacada->municipio; ?></td>
+                                        <td><?php echo $destacada->estado; ?></td>
+                                        <td>$<?php echo number_format($destacada->precio_publico); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Propiedades Página Inicio </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th># ID</th>
+                                    <th>Tipo</th>
+                                    <th>Estatus Prop</th>
+                                    <th>Municipio</th>
+                                    <th>Estado</th>
+                                    <th>Precio Público</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($iniciales as $inicial): ?>
+                                    <tr>
+                                        <td>
+                                            <a href="<?php echo base_url('admon/propiedades/editar/' . $inicial->propiedades_id); ?>">
+                                                <?php echo $inicial->propiedades_id; ?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo $inicial->tipo_propiedad; ?></td>
+                                        <td><?php echo $inicial->estatus_propiedad; ?></td>
+                                        <td><?php echo $inicial->municipio; ?></td>
+                                        <td><?php echo $inicial->estado; ?></td>
+                                        <td>$<?php echo number_format($inicial->precio_publico); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,30 +134,75 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Propiedades registradas en el sistema</h5>
+                            <h5>Propiedades Ofertas Especiales </h5>
+                        </div>
+                        <div class="ibox-content">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th># ID</th>
+                                    <th>Tipo</th>
+                                    <th>Estatus Prop</th>
+                                    <th>Municipio</th>
+                                    <th>Estado</th>
+                                    <th>Precio Público</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($ofertas as $oferta): ?>
+                                    <tr>
+                                        <td>
+                                            <a href="<?php echo base_url('admon/propiedades/editar/' . $oferta->propiedades_id); ?>">
+                                                <?php echo $oferta->propiedades_id; ?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo $oferta->tipo_propiedad; ?></td>
+                                        <td><?php echo $oferta->estatus_propiedad; ?></td>
+                                        <td><?php echo $oferta->municipio; ?></td>
+                                        <td><?php echo $oferta->estado; ?></td>
+                                        <td>$<?php echo number_format($oferta->precio_publico); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Todas las Propiedades Registradas en el Sistema</h5>
                         </div>
                         <div class="ibox-content">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover dataTables-example">
                                     <thead>
                                     <tr>
-                                        <th>Prop ID</th>
+                                        <th># ID</th>
                                         <th>Tipo</th>
                                         <th>Estatus Prop</th>
                                         <th>Municipio</th>
                                         <th>Estado</th>
                                         <th>Precio Público</th>
+                                        <th>Visible</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php foreach ($propiedades as $propiedad): ?>
-                                        <tr class="">
-                                            <td class="text-center"><a href="#"><?php echo $propiedad->propiedades_id; ?></a></td>
+                                        <tr>
+                                            <td class="text-center">
+                                                <a href="<?php echo base_url('admon/propiedades/editar/' . $propiedad->propiedades_id); ?>">
+                                                    <?php echo $propiedad->propiedades_id; ?>
+                                                </a>
+                                            </td>
                                             <td><?php echo $propiedad->tipo_propiedad; ?></td>
                                             <td><?php echo $propiedad->estatus_propiedad; ?></td>
                                             <td><?php echo $propiedad->municipio; ?></td>
                                             <td><?php echo $propiedad->estado; ?></td>
                                             <td>$<?php echo number_format($propiedad->precio_publico); ?></td>
+                                            <td class="text-center"><?php echo ((bool)$propiedad->estatus)? 'Si' : 'No'; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
@@ -89,6 +214,7 @@
                                         <th>Municipio</th>
                                         <th>Estado</th>
                                         <th>Precio Público</th>
+                                        <th>Visible</th>
                                     </tr>
                                     </tfoot>
                                 </table>
@@ -117,6 +243,25 @@
 <script>
     $(document).ready(function () {
         $('.dataTables-example').DataTable({
+            language: {
+                aria: {
+                    sortAscending: ": activar para ordenar la columna ascendentemente",
+                    sortDescending: ": activar para ordenar la columna descendentemente"
+                },
+                emptyTable: "No hay datos para mostrar",
+                info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                infoEmpty: "No fue encontrado algún registro",
+                infoFiltered: "(filtered1 de _MAX_ registros totales)",
+                lengthMenu: "Mostrar _MENU_",
+                search: "Buscar:",
+                zeroRecords: "No se encontraron registros coincidentes",
+                paginate: {
+                    previous: "Prev",
+                    next: "Sig",
+                    last: "Último",
+                    first: "Primero"
+                }
+            },
             pageLength: 25,
             responsive: true,
             dom: '<"html5buttons"B>lTfgitp',

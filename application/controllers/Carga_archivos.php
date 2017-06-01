@@ -14,7 +14,7 @@ class Carga_archivos extends CI_Controller
     public function carga_propiedades()
     {
         $this->load->library('Lector_archivos');
-        $xlsx = $this->lector_archivos->leer_xlsx(FCPATH . 'assets/archivos/base_propiedades_test.xlsx');
+        $xlsx = $this->lector_archivos->leer_xlsx(FCPATH . 'assets/archivos/base_propiedades_final.xlsx');
         $this->load->library('business/Propiedad');
         $datos = $this->propiedad->inserta_propiedades_xlsx($xlsx);
         $data['datos'] = $datos;

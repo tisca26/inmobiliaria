@@ -154,28 +154,28 @@
                                     </a>
                                 </li>
                                 <?php endif; ?>
-                                <?php if (isset($agente->tel_fijo)): ?>
+                                <?php if (isset($agente->tel_fijo) && $agente->tel_fijo !=''): ?>
                                 <li>
                                     <a href="#">
                                         <i class="icon-call-out icons"></i> <?php echo $agente->tel_fijo . (isset($agente->tel_fijo_ext) ? ' - ' . $agente->tel_fijo_ext : ''); ?>
                                     </a>
                                 </li>
                                 <?php endif; ?>
-                                <?php if (isset($agente->linkedin_profile)): ?>
+                                <?php if (isset($agente->linkedin_profile) && $agente->linkedin_profile != ''): ?>
                                     <li>
                                         <a href="<?php echo $agente->linkedin_profile; ?>">
                                             <i class="icon-social-linkedin icons"></i> Lindekin
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                                <?php if (isset($agente->facebook_profile)): ?>
+                                <?php if (isset($agente->facebook_profile) && $agente->facebook_profile != ''): ?>
                                     <li>
                                         <a href="<?php echo $agente->facebook_profile; ?>">
                                             <i class="icon-social-facebook icons"></i> Facebook
                                         </a>
                                     </li>
                                 <?php endif; ?>
-                                <?php if (isset($agente->twitter_profile)): ?>
+                                <?php if (isset($agente->twitter_profile) && $agente->twitter_profile != ''): ?>
                                     <li>
                                         <a href="<?php echo $agente->twitter_profile; ?>">
                                             <i class="icon-social-twitter icons"></i> Twitter
