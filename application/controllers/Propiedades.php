@@ -110,7 +110,8 @@ class Propiedades extends CI_Controller
             $busqueda_dto->min_precio = $this->input->post('propertiesMinPrice');
             $busqueda_dto->max_precio = $this->input->post('propertiesMaxPrice');
             $this->session->set_userdata('busqueda_dto', $busqueda_dto);
-            $this->pag(0);
+            //$this->pag(0);
+            redirect(lang_segment_slash() .'propiedades/pag/');
         }
     }
 

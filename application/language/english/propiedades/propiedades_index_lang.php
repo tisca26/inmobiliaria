@@ -12,6 +12,8 @@ $lang['listado_para_venta_renta'] = 'List for Sale or Rent';
 $lang['listado_para'] = 'List for';
 $lang['venta'] = 'Sale';
 $lang['renta'] = 'Rent';
+$lang['Venta'] = 'Sale';
+$lang['Renta'] = 'Rent';
 $lang['o'] = 'or';
 
 $lang['primero'] = 'First';
