@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h4 class="mb-md">Porto Real Estate</h4>
+                <h4 class="mb-md"><?php echo EMPRESA_NOMBRE; ?></h4>
                 <p class="custom-color-2">
                     <?php echo EMPRESA_DIRECCION; ?><br>
                     <?php echo trans_line('footer_tel'); ?> : <?php echo EMPRESA_TELEFONO; ?><br>
@@ -17,7 +17,7 @@
                         <?php foreach ($busqueda_dto->tipos_propiedades as $busqueda_tipos_propiedades): ?>
                             <li>
                                 <a href="<?php echo base_url_lang_slash() . 'propiedades/ver_tipo/' . $busqueda_tipos_propiedades->tipo_propiedad_id; ?>" class="custom-color-2 text-decoration-none">
-                                    <?php echo $busqueda_tipos_propiedades->nombre; ?>
+                                    <?php echo trans_line($busqueda_tipos_propiedades->nombre); ?>
                                 </a>
                             </li>
                         <?php endforeach; ?>

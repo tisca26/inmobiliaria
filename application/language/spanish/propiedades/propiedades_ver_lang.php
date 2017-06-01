@@ -35,6 +35,7 @@ $lang['tipo_propiedad'] = 'Tipo propiedad';
 $lang['Casa'] = 'Casa';
 $lang['Departamento'] = 'Departamento';
 $lang['Pent - House'] = 'Pent - House';
+$lang['Edificio'] = 'Edificio';
 $lang['direccion'] = 'Dirección';
 $lang['municipio'] = 'Municipio';
 $lang['m2_totales'] = 'Metros útiles';
