@@ -128,27 +128,18 @@
 
                     <p class="lead mb-xl"><?php echo trans_line('p01'); ?></p>
 
-                    <img width="400" class="img-responsive pull-right ml-xl mb-xl mt-xs" alt="" src="<?php echo cdn_assets(); ?>/img/demos/real-estate/agency.jpg">
-
                     <p><?php echo trans_line('p02'); ?></p>
 
-                    <p><?php echo trans_line('p03'); ?></p>
-
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <h4 class="mt-xlg mb-md"><?php echo trans_line('nuestra_mision'); ?></h4>
 
                             <p><?php echo trans_line('mision_p01'); ?></p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <h4 class="mt-xlg mb-md"><?php echo trans_line('nuestra_vision'); ?></h4>
 
                             <p><?php echo trans_line('vision_p01'); ?></p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 class="mt-xlg mb-md"><?php echo trans_line('nuestros_valores'); ?></h4>
-
-                            <p><?php echo trans_line('valores_p01'); ?></p>
                         </div>
                     </div>
 

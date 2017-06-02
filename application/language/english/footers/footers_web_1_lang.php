@@ -18,7 +18,7 @@ $lang['footer_twitter'] = 'Twitter';
 $lang['footer_espere'] = 'Wait please...';
 
 $lang['Casa'] = 'House';
-$lang['Departamento'] = 'Department';
+$lang['Departamento'] = 'Apartment';
 $lang['Pent - House'] = 'Pent - House';
 $lang['Edificio'] = 'Building';
 
