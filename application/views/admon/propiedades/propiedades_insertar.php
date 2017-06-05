@@ -322,7 +322,7 @@
                     </div>
                     <div class="hr-line-dashed"></div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Imágenes</label>
+                        <label class="col-sm-2 control-label">Imágenes (Normal: 912x608 | Descatado: 1920x650)</label>
                         <div class="col-sm-10">
                             <input type="file" name="img_profile[]" class="form-control" accept="image/*" multiple>
                         </div>

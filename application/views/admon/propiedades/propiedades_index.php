@@ -67,6 +67,7 @@
                                     <th># ID</th>
                                     <th>Tipo</th>
                                     <th>Estatus Prop</th>
+                                    <th>Calle</th>
                                     <th>Municipio</th>
                                     <th>Estado</th>
                                     <th>Precio Público</th>
@@ -82,6 +83,7 @@
                                         </td>
                                         <td><?php echo $destacada->tipo_propiedad; ?></td>
                                         <td><?php echo $destacada->estatus_propiedad; ?></td>
+                                        <td><?php echo $destacada->calle; ?></td>
                                         <td><?php echo $destacada->municipio; ?></td>
                                         <td><?php echo $destacada->estado; ?></td>
                                         <td>$<?php echo number_format($destacada->precio_publico); ?></td>
@@ -104,6 +106,7 @@
                                     <th># ID</th>
                                     <th>Tipo</th>
                                     <th>Estatus Prop</th>
+                                    <th>Calle</th>
                                     <th>Municipio</th>
                                     <th>Estado</th>
                                     <th>Precio Público</th>
@@ -119,6 +122,7 @@
                                         </td>
                                         <td><?php echo $inicial->tipo_propiedad; ?></td>
                                         <td><?php echo $inicial->estatus_propiedad; ?></td>
+                                        <td><?php echo $inicial->calle; ?></td>
                                         <td><?php echo $inicial->municipio; ?></td>
                                         <td><?php echo $inicial->estado; ?></td>
                                         <td>$<?php echo number_format($inicial->precio_publico); ?></td>
@@ -143,6 +147,7 @@
                                     <th># ID</th>
                                     <th>Tipo</th>
                                     <th>Estatus Prop</th>
+                                    <th>Calle</th>
                                     <th>Municipio</th>
                                     <th>Estado</th>
                                     <th>Precio Público</th>
@@ -158,6 +163,7 @@
                                         </td>
                                         <td><?php echo $oferta->tipo_propiedad; ?></td>
                                         <td><?php echo $oferta->estatus_propiedad; ?></td>
+                                        <td><?php echo $oferta->calle; ?></td>
                                         <td><?php echo $oferta->municipio; ?></td>
                                         <td><?php echo $oferta->estado; ?></td>
                                         <td>$<?php echo number_format($oferta->precio_publico); ?></td>
@@ -183,6 +189,7 @@
                                         <th># ID</th>
                                         <th>Tipo</th>
                                         <th>Estatus Prop</th>
+                                        <th>Calle</th>
                                         <th>Municipio</th>
                                         <th>Estado</th>
                                         <th>Precio Público</th>
@@ -199,6 +206,7 @@
                                             </td>
                                             <td><?php echo $propiedad->tipo_propiedad; ?></td>
                                             <td><?php echo $propiedad->estatus_propiedad; ?></td>
+                                            <td><?php echo $propiedad->calle; ?></td>
                                             <td><?php echo $propiedad->municipio; ?></td>
                                             <td><?php echo $propiedad->estado; ?></td>
                                             <td>$<?php echo number_format($propiedad->precio_publico); ?></td>
@@ -211,6 +219,7 @@
                                         <th>Prop ID</th>
                                         <th>Tipo</th>
                                         <th>Estatus Prop</th>
+                                        <th>Calle</th>
                                         <th>Municipio</th>
                                         <th>Estado</th>
                                         <th>Precio Público</th>
