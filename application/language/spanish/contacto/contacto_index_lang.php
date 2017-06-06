@@ -2,7 +2,7 @@
 
 $lang['title'] = 'Contacto';
 $lang['meta_keywords'] = 'renta, venta, casas';
-$lang['meta_description'] = 'Venta o renta de casas en el mejor lugar.';
+$lang['meta_description'] = 'Contacto para venta o renta de casas en el mejor lugar.';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Inicio';

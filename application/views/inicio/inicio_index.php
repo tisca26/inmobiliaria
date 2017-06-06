@@ -442,5 +442,6 @@
 <!-- Theme Initialization Files -->
 <script src="<?php echo cdn_assets(); ?>/js/theme.init.js"></script>
 
+<?php $this->cargar_elementos_manager->carga_simple('elementos_extras/g_analytics'); ?>
 </body>
 </html>

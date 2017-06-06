@@ -347,7 +347,6 @@
 
 </script>
 
-
-
+<?php $this->cargar_elementos_manager->carga_simple('elementos_extras/g_analytics'); ?>
 </body>
 </html>

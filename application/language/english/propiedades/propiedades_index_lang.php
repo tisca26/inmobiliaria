@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'Rent and/or Sale Properties';
-$lang['meta_keywords'] = 'renta, venta, casas';
-$lang['meta_description'] = 'Venta o renta de casas en el mejor lugar.';
+$lang['title'] = 'Search properties for rent and / or sale across the country';
+$lang['meta_keywords'] = 'rent, sale, houses';
+$lang['meta_description'] = 'Search for properties for rent and / or sale in the whole country';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Home';

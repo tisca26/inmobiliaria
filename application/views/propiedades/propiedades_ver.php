@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title><?php echo trans_line('title'); ?></title>
+    <title><?php echo trans_line('title') . "$propiedad->municipio, $propiedad->calle $propiedad->no_exterior"; ?></title>
 
-    <meta name="keywords" content="<?php echo trans_line('meta_keywords'); ?>"/>
-    <meta name="description" content="<?php echo trans_line('meta_description'); ?>">
+    <meta name="keywords" content="<?php echo trans_line('meta_keywords') . $propiedad->municipio; ?>"/>
+    <meta name="description" content="<?php echo trans_line('meta_description') . "$propiedad->calle . $propiedad->no_exterior, $propiedad->municipio"; ?>">
     <meta name="author" content="<?php echo trans_line('meta_author'); ?>">
 
     <!-- Favicon -->
@@ -550,6 +550,6 @@
 
 </script>
 
-
+<?php $this->cargar_elementos_manager->carga_simple('elementos_extras/g_analytics'); ?>
 </body>
 </html>
