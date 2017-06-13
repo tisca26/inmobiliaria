@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'Search properties for rent and / or sale across the country';
+$lang['title'] = 'Search properties for rent and / or sale across the country  - Okan Real State';
 $lang['meta_keywords'] = 'rent, sale, houses';
-$lang['meta_description'] = 'Search for properties for rent and / or sale in the whole country';
+$lang['meta_description'] = 'Search for properties for rent and / or sale in the whole country - Okan Real State';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Home';

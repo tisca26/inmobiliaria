@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'Agents of ' . EMPRESA_NOMBRE;
+$lang['title'] = 'Agents - Okan Real State';
 $lang['meta_keywords'] = 'renta, venta, casas';
-$lang['meta_description'] = 'Agents for sale or rent of houses in the best place.';
+$lang['meta_description'] = 'Agents for sale or rent of houses in the best place - Okan Real State';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Home';

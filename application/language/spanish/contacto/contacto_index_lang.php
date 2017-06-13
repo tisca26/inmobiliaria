@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'Contacto';
+$lang['title'] = 'Contacto - ' . EMPRESA_NOMBRE;
 $lang['meta_keywords'] = 'renta, venta, casas';
-$lang['meta_description'] = 'Contacto para venta o renta de casas en el mejor lugar.';
+$lang['meta_description'] = 'Contacto para venta o renta de casas en el mejor lugar  - ' . EMPRESA_NOMBRE;
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Inicio';

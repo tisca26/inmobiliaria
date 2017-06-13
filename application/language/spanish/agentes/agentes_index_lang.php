@@ -2,7 +2,7 @@
 
 $lang['title'] = 'Agentes de ' . EMPRESA_NOMBRE;
 $lang['meta_keywords'] = 'renta, venta, casas';
-$lang['meta_description'] = 'Agentes para la venta o renta de casas en el mejor lugar.';
+$lang['meta_description'] = 'Agentes para la venta o renta de casas en el mejor lugar - ' . EMPRESA_NOMBRE;
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Inicio';

@@ -95,7 +95,7 @@ defined('BOOTSTRAP_ALERT_DANGER')   OR define('BOOTSTRAP_ALERT_DANGER', 'danger'
 /*
  * Datos de la empresa
  */
-defined('EMPRESA_NOMBRE')  OR define('EMPRESA_NOMBRE', 'OKAN');
+defined('EMPRESA_NOMBRE')  OR define('EMPRESA_NOMBRE', 'OKAN INMOBILIARIA');
 defined('EMPRESA_DIRECCION')  OR define('EMPRESA_DIRECCION', 'Insurgentes Sur 586, Del Valle, Ciudad de México');
 defined('EMPRESA_TELEFONO')  OR define('EMPRESA_TELEFONO', '(55) 1107-0650');
 defined('EMPRESA_MAIL')  OR define('EMPRESA_MAIL', 'ventas@okan.capital');

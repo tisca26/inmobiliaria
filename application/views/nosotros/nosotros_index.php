@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Porto - Responsive HTML5 Template 5.7.2</title>
+    <title><?php echo trans_line('title'); ?></title>
 
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Porto - Responsive HTML5 Template">
-    <meta name="author" content="okler.net">
+    <meta name="keywords" content="<?php echo trans_line('meta_keywords'); ?>"/>
+    <meta name="description" content="<?php echo trans_line('meta_description'); ?>">
+    <meta name="author" content="<?php echo trans_line('meta_author'); ?>">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo cdn_assets(); ?>/img/favicon.ico" type="image/x-icon" />

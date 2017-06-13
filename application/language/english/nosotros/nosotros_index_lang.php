@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'About Us';
+$lang['title'] = 'About Us - Okan Real State';
 $lang['meta_keywords'] = 'rent, sale, houses';
-$lang['meta_description'] = 'About us. Sale or rent of houses in the best place.';
+$lang['meta_description'] = 'About us. Sale or rent of houses in the best place  - Okan Real State';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Home';

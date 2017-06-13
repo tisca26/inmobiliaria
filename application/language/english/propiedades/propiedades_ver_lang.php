@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['title'] = 'Propiedad en ';
+$lang['title'] = 'Okan Real State - Property in ';
 $lang['meta_keywords'] = 'renta, venta, casas,';
-$lang['meta_description'] = 'Busqueda de propiedades para renta y / o venta en ';
+$lang['meta_description'] = 'Okan Real State - Search for properties for rent and / or sale in ';
 $lang['meta_author'] = 'Icognitis | www.icognitis.com';
 
 $lang['breadcrumb_inicio'] = 'Home';
