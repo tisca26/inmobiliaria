@@ -46,6 +46,7 @@ $lang['cocinas'] = 'Kitchens';
 $lang['banos'] = 'Baths';
 $lang['estacionamientos'] = 'Garages';
 
+$lang['nuestros_agentes'] = 'Our Agents';
 
 $lang['descripcion'] = 'Description';
 $lang['caracteristicas'] = 'Features';
