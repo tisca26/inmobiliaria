@@ -4,6 +4,7 @@
 class Login extends CI_Controller
 {
     private $pag_redirect = 'admon/agentes';
+
     public function index()
     {
         if (get_attr_session('logged_in') === 'OK_LOGIN') {
@@ -22,7 +23,7 @@ class Login extends CI_Controller
             return $this->index();
         } else {
             $intento_url = get_attr_session('intento_url');
-            return redirect(isset($intento_url)? $intento_url : $this->pag_redirect);
+            return redirect(isset($intento_url) ? $intento_url : $this->pag_redirect);
         }
     }
 
