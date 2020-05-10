@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('cargar_elementos_manager', 'cargar_idioma', 'menu_manager', 'database','session', 'encrypt');
+$autoload['libraries'] = array('cargar_elementos_manager', 'cargar_idioma', 'menu_manager', 'database','session', 'encryption');
 
 /*
 | -------------------------------------------------------------------

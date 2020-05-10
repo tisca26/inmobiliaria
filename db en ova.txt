@@ -1,0 +1,3 @@
+db: oficin13_inmobiliaria
+usr: oficin13_u_inmo
+psw: OS23)M~}IqO}

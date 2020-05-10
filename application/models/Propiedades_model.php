@@ -141,7 +141,7 @@ class Propiedades_model extends CI_Model
     public function ubicaciones_distintas()
     {
         $res = array();
-        $q = $this->db->where('estatus', 1)->group_by('estado')->order_by('estado ASC')->get('propiedades');
+        $q = $this->db->select('estado')->where('estatus', 1)->group_by('estado')->order_by('estado ASC')->get('propiedades');
         if ($q->num_rows() > 0) {
             $res = $q->result();
         }
